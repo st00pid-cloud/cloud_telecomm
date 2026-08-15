@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "DisasterEvent",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "type": "string"
+    },
+    "event_name": {
+      "type": "string"
+    },
+    "hazard_type": {
+      "type": "string",
+      "enum": [
+        "typhoon",
+        "flood",
+        "landslide"
+      ]
+    },
+    "affected_region": {
+      "type": "string"
+    },
+    "hazard_exposure": {
+      "type": "string",
+      "enum": [
+        "low",
+        "medium",
+        "high"
+      ]
+    },
+    "event_status": {
+      "type": "string",
+      "enum": [
+        "active",
+        "monitoring",
+        "closed"
+      ]
+    }
+  },
+  "required": [
+    "event_id",
+    "event_name",
+    "hazard_type",
+    "affected_region",
+    "hazard_exposure",
+    "event_status"
+  ]
+}

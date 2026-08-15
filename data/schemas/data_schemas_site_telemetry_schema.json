@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SiteTelemetry",
+  "type": "object",
+  "properties": {
+    "site_id": {
+      "type": "string"
+    },
+    "power_status": {
+      "type": "string",
+      "enum": [
+        "online",
+        "unstable",
+        "down"
+      ]
+    },
+    "backhaul_status": {
+      "type": "string",
+      "enum": [
+        "online",
+        "degraded",
+        "cut"
+      ]
+    },
+    "physical_damage": {
+      "type": "string",
+      "enum": [
+        "none",
+        "minor",
+        "major"
+      ]
+    },
+    "current_status": {
+      "type": "string",
+      "enum": [
+        "up",
+        "degraded",
+        "down"
+      ]
+    },
+    "affected_users_est": {
+      "type": "integer",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "site_id",
+    "power_status",
+    "backhaul_status",
+    "physical_damage",
+    "current_status",
+    "affected_users_est"
+  ]
+}

@@ -1,0 +1,19 @@
+# Terraform State & Secrets
+*.tfstate
+*.tfstate.backup
+.terraform/
+.terraform.lock.hcl
+*.tfvars
+.env
+*.pem
+*.key
+
+# Java / Spring Boot Build
+backend/target/
+*.class
+*.jar
+
+# React Node Modules & Builds
+frontend/node_modules/
+frontend/dist/
+frontend/build/

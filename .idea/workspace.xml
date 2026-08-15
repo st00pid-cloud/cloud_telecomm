@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="8f5b04a4-dc0f-4ada-8337-84262b58296d" name="Changes" comment="Start of hour 6">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/backend/disastertelecom" value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.4512907575786225" />
+      <entry key="MS500" value="2.849187679157472" />
+      <entry key="S2" value="5.988645433602399" />
+      <entry key="S5" value="7.569045306938429" />
+      <entry key="S10" value="8.242320539088958" />
+      <entry key="S30" value="8.875311809235626" />
+      <entry key="S60" value="9.317435936240745" />
+      <entry key="M2" value="10.179664360601535" />
+      <entry key="M5" value="17.805685215417192" />
+      <entry key="M10" value="38.353562722637925" />
+      <entry key="M15" value="55.98685383507362" />
+      <entry key="M30" value="90.64404769314913" />
+      <entry key="H1" value="155.5278251963487" />
+      <entry key="H2" value="335.58624994403215" />
+      <entry key="H4" value="614.7828671453468" />
+      <entry key="D1" value="1121.2630003841518" />
+      <entry key="W1" value="1251.6264880958313" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="2.44876161472322E-130" />
+      <entry key="S10" value="1.5648519465825553E-65" />
+      <entry key="S30" value="2.5012537426573403E-22" />
+      <entry key="S60" value="1.5815352486294217E-11" />
+      <entry key="M2" value="3.976852082526358E-6" />
+      <entry key="M5" value="0.006915375630631046" />
+      <entry key="M10" value="0.08315935801824863" />
+      <entry key="M15" value="0.19059187787499707" />
+      <entry key="M30" value="0.44501415551946244" />
+      <entry key="H1" value="0.7530236713135129" />
+      <entry key="H2" value="1.116713464700356" />
+      <entry key="H4" value="1.4528319929064362" />
+      <entry key="D1" value="1.8883887898398695" />
+      <entry key="W1" value="1.983456478687069" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="1.0685980303631795" />
+      <entry key="MS500" value="2.3358439174533863" />
+      <entry key="S2" value="5.728875437038701" />
+      <entry key="S5" value="7.4460958659076235" />
+      <entry key="S10" value="8.17700081424075" />
+      <entry key="S30" value="8.850004200087696" />
+      <entry key="S60" value="9.302140870073504" />
+      <entry key="M2" value="10.170317589609194" />
+      <entry key="M5" value="17.807512091108418" />
+      <entry key="M10" value="38.432921131786145" />
+      <entry key="M15" value="56.17408701294803" />
+      <entry key="M30" value="91.08642362931668" />
+      <entry key="H1" value="156.278743480113" />
+      <entry key="H2" value="336.7010699674649" />
+      <entry key="H4" value="616.2341619131336" />
+      <entry key="D1" value="1123.1509628652743" />
+      <entry key="W1" value="1253.6098775453581" />
+    </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Security Analysis" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3HxNURdf5TqoY20x8CiCRdZOi0x" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "master",
+    "javascript.preferred.runtime.type.id": "node",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/justine.mae.macario/cloud-disaster-telecom-decision-intelligence",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.jshint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.jshint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "C:/Users/justine.mae.macario/AppData/Roaming/JetBrains/IntelliJIdea2026.2/node/versions/24.18.0/node",
+    "nodejs_package_manager_path": "npm",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "settings.qodana",
+    "to.speed.mode.migration.done": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\justine.mae.macario\cloud-disaster-telecom-decision-intelligence\data\schemas" />
+      <recent name="C:\Users\justine.mae.macario\cloud-disaster-telecom-decision-intelligence\backend\disastertelecom" />
+      <recent name="C:\Users\justine.mae.macario\cloud-disaster-telecom-decision-intelligence\backend\disastertelecom\src" />
+      <recent name="C:\Users\justine.mae.macario\cloud-disaster-telecom-decision-intelligence\backend" />
+      <recent name="C:\Users\justine.mae.macario\cloud-disaster-telecom-decision-intelligence\backend\disastertelecom\src\main\java\com\accen\disastertelecom\service" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-63390994e64e-intellij.indexing.shared.core-IU-262.8665.258" />
+        <option value="bundled-js-predefined-d6986cc7102b-4abd2a77f808-JavaScript-IU-262.8665.258" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8f5b04a4-dc0f-4ada-8337-84262b58296d" name="Changes" comment="" />
+      <created>1786805780505</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1786805780505</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initialized backend and scaffold stuff" />
+    <MESSAGE value="more scaffolding" />
+    <MESSAGE value="Writing the DDL Schema Migration Script" />
+    <MESSAGE value="Implemented JPA Entity Classes and scaffoled spring data JPA repositories" />
+    <MESSAGE value="Implemented data transfer objects, implemented controller stubs," />
+    <MESSAGE value="Define service interface and implementation class, Define computing service for pre-disaster risk scores, Define service to compute restoration priority scores, Define decision rules, orchestrator service" />
+    <MESSAGE value="Start of hour 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start of hour 6" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="NONE" type="java-line">
+          <url>file://$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/service/impl/IncidentProcessingServiceImpl.java</url>
+          <line>52</line>
+          <placement>INTER_LINE</placement>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
