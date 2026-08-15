@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f5b04a4-dc0f-4ada-8337-84262b58296d" name="Changes" comment="more scaffolding">
+    <list default="true" id="8f5b04a4-dc0f-4ada-8337-84262b58296d" name="Changes" comment="Writing the DDL Schema Migration Script">
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/entity/AlertRule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/entity/DisasterEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/entity/ScoreResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/entity/SiteStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/repository/DisasterEventRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/repository/ScoreResultRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/repository/SiteStatusRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -17,23 +24,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000094103098789" />
-      <entry key="S2" value="1.145436941851947" />
-      <entry key="S5" value="2.686280521692921" />
-      <entry key="S10" value="6.062814125865643" />
-      <entry key="S30" value="18.52574325930663" />
-      <entry key="S60" value="37.18363469507398" />
-      <entry key="M2" value="73.15747737960929" />
-      <entry key="M5" value="167.58832062088956" />
-      <entry key="M10" value="263.16089461317125" />
-      <entry key="M15" value="313.9461022101285" />
-      <entry key="M30" value="379.5710695475717" />
-      <entry key="H1" value="419.4376284416636" />
-      <entry key="H2" value="441.45386915780614" />
-      <entry key="H4" value="453.02862785240245" />
-      <entry key="D1" value="462.97660640423686" />
-      <entry key="W1" value="464.71024575059846" />
+      <entry key="MS100" value="1.0000000000119849" />
+      <entry key="MS500" value="1.0065422381836595" />
+      <entry key="S2" value="1.2844013077994036" />
+      <entry key="S5" value="1.6050812894629143" />
+      <entry key="S10" value="1.8042755771674668" />
+      <entry key="S30" value="3.61463223505631" />
+      <entry key="S60" value="12.88424533836868" />
+      <entry key="M2" value="36.54205391526894" />
+      <entry key="M5" value="100.40546858189366" />
+      <entry key="M10" value="200.01047885112416" />
+      <entry key="M15" value="276.80945843175954" />
+      <entry key="M30" value="405.43787950755313" />
+      <entry key="H1" value="501.1941702886866" />
+      <entry key="H2" value="560.1026181007481" />
+      <entry key="H4" value="592.8399894518412" />
+      <entry key="D1" value="621.9637344646434" />
+      <entry key="W1" value="627.1332508795566" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -55,23 +62,23 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9592641193252643" />
-      <entry key="MS500" value="0.9917260473222611" />
-      <entry key="S2" value="1.1408091233236795" />
-      <entry key="S5" value="2.664757901087553" />
-      <entry key="S10" value="6.031912058987672" />
-      <entry key="S30" value="18.49410886507557" />
-      <entry key="S60" value="37.155745153217346" />
-      <entry key="M2" value="73.13483603529448" />
-      <entry key="M5" value="167.57401260093133" />
-      <entry key="M10" value="263.1520588946264" />
-      <entry key="M15" value="313.9397131835273" />
-      <entry key="M30" value="379.567580872418" />
-      <entry key="H1" value="419.43580029686717" />
-      <entry key="H2" value="441.4529326536925" />
-      <entry key="H4" value="453.0281537933841" />
-      <entry key="D1" value="462.9765265702827" />
-      <entry key="W1" value="464.71023432533025" />
+      <entry key="MS100" value="0.23004691265745256" />
+      <entry key="MS500" value="0.7495071296274234" />
+      <entry key="S2" value="1.1830022002269696" />
+      <entry key="S5" value="1.5492236781975726" />
+      <entry key="S10" value="1.7716530977828395" />
+      <entry key="S30" value="3.5984097088956846" />
+      <entry key="S60" value="12.870899123789545" />
+      <entry key="M2" value="36.528503818468934" />
+      <entry key="M5" value="100.39249699052107" />
+      <entry key="M10" value="199.99977674086526" />
+      <entry key="M15" value="276.80061058468425" />
+      <entry key="M30" value="405.43221919558385" />
+      <entry key="H1" value="501.19092732856666" />
+      <entry key="H2" value="560.1008764627637" />
+      <entry key="H4" value="592.8390861578522" />
+      <entry key="D1" value="621.9635791818362" />
+      <entry key="W1" value="627.1332285773357" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -82,6 +89,9 @@
   &quot;fromUser&quot;: false
 }</component>
   <component name="ProjectId" id="3HxNURdf5TqoY20x8CiCRdZOi0x" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
@@ -133,6 +143,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initialized backend and scaffold stuff" />
     <MESSAGE value="more scaffolding" />
-    <option name="LAST_COMMIT_MESSAGE" value="more scaffolding" />
+    <MESSAGE value="Writing the DDL Schema Migration Script" />
+    <option name="LAST_COMMIT_MESSAGE" value="Writing the DDL Schema Migration Script" />
   </component>
 </project>
