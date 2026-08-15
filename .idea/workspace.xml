@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f5b04a4-dc0f-4ada-8337-84262b58296d" name="Changes" comment="Initialized backend and scaffold stuff">
-      <change afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
+    <list default="true" id="8f5b04a4-dc0f-4ada-8337-84262b58296d" name="Changes" comment="more scaffolding">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,23 +17,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.8694107103517765" />
-      <entry key="MS500" value="5.114824413737698" />
-      <entry key="S2" value="10.304536369241331" />
-      <entry key="S5" value="14.690421896957687" />
-      <entry key="S10" value="21.062607146918037" />
-      <entry key="S30" value="47.518160452454" />
-      <entry key="S60" value="83.14446491320561" />
-      <entry key="M2" value="133.8763740553225" />
-      <entry key="M5" value="198.50712390706244" />
-      <entry key="M10" value="231.41654420115103" />
-      <entry key="M15" value="244.19547680344246" />
-      <entry key="M30" value="258.02327902951345" />
-      <entry key="H1" value="265.3613800863707" />
-      <entry key="H2" value="269.1422583811378" />
-      <entry key="H4" value="271.0614105714817" />
-      <entry key="D1" value="272.67554244598114" />
-      <entry key="W1" value="272.953615506747" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0000094103098789" />
+      <entry key="S2" value="1.145436941851947" />
+      <entry key="S5" value="2.686280521692921" />
+      <entry key="S10" value="6.062814125865643" />
+      <entry key="S30" value="18.52574325930663" />
+      <entry key="S60" value="37.18363469507398" />
+      <entry key="M2" value="73.15747737960929" />
+      <entry key="M5" value="167.58832062088956" />
+      <entry key="M10" value="263.16089461317125" />
+      <entry key="M15" value="313.9461022101285" />
+      <entry key="M30" value="379.5710695475717" />
+      <entry key="H1" value="419.4376284416636" />
+      <entry key="H2" value="441.45386915780614" />
+      <entry key="H4" value="453.02862785240245" />
+      <entry key="D1" value="462.97660640423686" />
+      <entry key="W1" value="464.71024575059846" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -56,24 +55,27 @@
       <entry key="W1" value="0.0" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.828019121268794" />
-      <entry key="MS500" value="5.089185194431171" />
-      <entry key="S2" value="10.290716063418193" />
-      <entry key="S5" value="14.682293096002939" />
-      <entry key="S10" value="21.056575160024448" />
-      <entry key="S30" value="47.51348216036271" />
-      <entry key="S60" value="83.14023387472697" />
-      <entry key="M2" value="133.8727530247301" />
-      <entry key="M5" value="198.50483738302643" />
-      <entry key="M10" value="231.41517767897682" />
-      <entry key="M15" value="244.1945070834178" />
-      <entry key="M30" value="258.0227621550343" />
-      <entry key="H1" value="265.36111310457" />
-      <entry key="H2" value="269.14212268255204" />
-      <entry key="H4" value="271.061342161067" />
-      <entry key="D1" value="272.6755309655184" />
-      <entry key="W1" value="272.9536138647424" />
+      <entry key="MS100" value="0.9592641193252643" />
+      <entry key="MS500" value="0.9917260473222611" />
+      <entry key="S2" value="1.1408091233236795" />
+      <entry key="S5" value="2.664757901087553" />
+      <entry key="S10" value="6.031912058987672" />
+      <entry key="S30" value="18.49410886507557" />
+      <entry key="S60" value="37.155745153217346" />
+      <entry key="M2" value="73.13483603529448" />
+      <entry key="M5" value="167.57401260093133" />
+      <entry key="M10" value="263.1520588946264" />
+      <entry key="M15" value="313.9397131835273" />
+      <entry key="M30" value="379.567580872418" />
+      <entry key="H1" value="419.43580029686717" />
+      <entry key="H2" value="441.4529326536925" />
+      <entry key="H4" value="453.0281537933841" />
+      <entry key="D1" value="462.9765265702827" />
+      <entry key="W1" value="464.71023432533025" />
     </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Security Analysis" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5,
@@ -130,6 +132,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initialized backend and scaffold stuff" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initialized backend and scaffold stuff" />
+    <MESSAGE value="more scaffolding" />
+    <option name="LAST_COMMIT_MESSAGE" value="more scaffolding" />
   </component>
 </project>
