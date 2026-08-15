@@ -1,7 +1,7 @@
 
 --Core Table: Base Telecom Site Inventory
 CREATE TABLE IF NOT EXISTS telecom_site (
-    site_ud VARCHAR(50) PRIMARY KEY,
+    site_id VARCHAR(50) PRIMARY KEY,
     region VARCHAR(100) NOT NULL,
     province VARCHAR(100) NOT NULL,
     municipality VARCHAR(100) NOT NULL,

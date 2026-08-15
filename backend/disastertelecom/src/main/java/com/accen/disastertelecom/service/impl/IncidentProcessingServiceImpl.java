@@ -16,7 +16,7 @@ import java.time.OffsetDateTime;
 
 @Service
 @RequiredArgsConstructor
-public class IncidentProcessingServiceImpl implements IncidentProcessingService {
+public class IncidentProcessingServiceImpl implements IncidentProcessingOrchestrationService {
 
     private final DataTransformationService transformationService;
     private final RiskScoringService riskScoringService;

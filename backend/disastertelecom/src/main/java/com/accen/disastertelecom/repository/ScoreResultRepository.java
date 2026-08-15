@@ -1,6 +1,6 @@
 package com.accen.disastertelecom.repository;
 
-import com.accene.disastertelecom.entity.ScoreResult;
+import com.accen.disastertelecom.entity.ScoreResult;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

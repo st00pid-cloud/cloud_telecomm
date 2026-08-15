@@ -1,6 +1,6 @@
 package com.accen.disastertelecom.repository;
 
-import com.example.disastertelecom.entity.TelecomSite;
+import com.accen.disastertelecom.entity.TelecomSite;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,4 +1,4 @@
-package com.example.disastertelecom.entity;
+package com.accen.disastertelecom.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -15,6 +15,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class AlertRule {
 
     @Id
