@@ -1,0 +1,16 @@
+site_id,region,province,municipality,connectivity_type,provider_type,backup_available,near_critical_facility
+SITE-VI-001,Region VI,Iloilo,Estancia,cellular,telco,True,hospital
+SITE-VI-002,Region VI,Iloilo,Carles,cellular,telco,False,evacuation_center
+SITE-VI-003,Region VI,Capiz,Roxas City,cellular,telco,True,hospital
+SITE-VI-004,Region VI,Iloilo,Passi City,cellular,telco,False,evacuation_center
+SITE-VI-005,Region VI,Antique,San Jose,cellular,telco,False,hospital
+SITE-VI-006,Region VI,Capiz,Panay,satellite,satellite_backup,True,evacuation_center
+SITE-VI-007,Region VI,Iloilo,Oton,free_wifi,government,True,school
+SITE-VI-008,Region VI,Antique,Culasi,radio,government,True,evacuation_center
+SITE-VI-009,Region VI,Iloilo,Balasan,cellular,telco,True,school
+SITE-VI-010,Region VI,Capiz,Dao,cellular,telco,False,none
+SITE-VI-011,Region VI,Antique,Sibalom,free_wifi,government,False,school
+SITE-VI-012,Region VI,Iloilo,Ajuy,cellular,telco,False,none
+SITE-VI-013,Region VI,Capiz,Tapaz,radio,government,True,none
+SITE-VI-014,Region VI,Antique,Hamtic,satellite,satellite_backup,True,hospital
+SITE-VI-015,Region VI,Iloilo,Sara,cellular,telco,True,hospital

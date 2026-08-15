@@ -4,32 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8f5b04a4-dc0f-4ada-8337-84262b58296d" name="Changes" comment="Define service interface and implementation class, Define computing service for pre-disaster risk scores, Define service to compute restoration priority scores, Define decision rules, orchestrator service">
-      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/pages/ExecutiveDashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="8f5b04a4-dc0f-4ada-8337-84262b58296d" name="Changes" comment="Start of hour 6">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/backend/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/disastertelecom/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/backend/disastertelecom/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/DisastertelecomApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/DisastertelecomApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/entity/AlertRule.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/entity/AlertRule.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/entity/DisasterEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/entity/DisasterEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/entity/ScoreResult.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/entity/ScoreResult.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/entity/SiteStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/entity/SiteStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/entity/TelecomSite.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/entity/TelecomSite.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/repository/ScoreResultRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/repository/ScoreResultRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/repository/TelecomSiteRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/repository/TelecomSiteRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/service/IncidentProcessingOrchestrationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/service/IncidentProcessingOrchestrationService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/service/impl/IncidentProcessingServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/service/impl/IncidentProcessingServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/disastertelecom/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/disastertelecom/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/resources/schema.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/disaster_event_schema.json" beforeDir="false" afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/config/DataInitializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/sample_disaster_events.csv" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/sample_sites.csv" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/DrrmDashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/raw/site_telemetry_schema.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/EngineerDashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/Dockerfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,65 +14,65 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backend/disastertelecom" />
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.005171183578403" />
-      <entry key="MS500" value="1.6449731738417301" />
-      <entry key="S2" value="4.637999033681474" />
-      <entry key="S5" value="7.717758642998009" />
-      <entry key="S10" value="9.790170403481616" />
-      <entry key="S30" value="11.763572690416524" />
-      <entry key="S60" value="12.357791477804005" />
-      <entry key="M2" value="12.690794173524006" />
-      <entry key="M5" value="14.13873066120824" />
-      <entry key="M10" value="18.41338734137633" />
-      <entry key="M15" value="22.219137359098216" />
-      <entry key="M30" value="33.95407776035947" />
-      <entry key="H1" value="94.56521292129956" />
-      <entry key="H2" value="285.62500550928127" />
-      <entry key="H4" value="560.8990924544984" />
-      <entry key="D1" value="1024.8002271206262" />
-      <entry key="W1" value="1139.5760046963496" />
+      <entry key="MS100" value="1.7311317367617645" />
+      <entry key="MS500" value="3.545453162700054" />
+      <entry key="S2" value="6.718630259295079" />
+      <entry key="S5" value="13.585569194778262" />
+      <entry key="S10" value="20.562047176154234" />
+      <entry key="S30" value="28.997535026876655" />
+      <entry key="S60" value="33.07822043840178" />
+      <entry key="M2" value="39.085424036188975" />
+      <entry key="M5" value="50.4896621843951" />
+      <entry key="M10" value="61.45265474695046" />
+      <entry key="M15" value="68.79161593132591" />
+      <entry key="M30" value="84.89770742717394" />
+      <entry key="H1" value="142.0164292267394" />
+      <entry key="H2" value="325.0394090975319" />
+      <entry key="H4" value="600.7146742933154" />
+      <entry key="D1" value="1082.0591745218908" />
+      <entry key="W1" value="1203.3437248535545" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="9.388206128603276E-16" />
-      <entry key="MS500" value="9.874532039563517E-4" />
-      <entry key="S2" value="0.17726750445993233" />
-      <entry key="S5" value="0.5005548253480808" />
-      <entry key="S10" value="0.7074989931781392" />
-      <entry key="S30" value="0.8910634064095364" />
-      <entry key="S60" value="0.9439615492219674" />
-      <entry key="M2" value="0.9715768364992894" />
-      <entry key="M5" value="0.988532292195626" />
-      <entry key="M10" value="0.994257030986678" />
-      <entry key="M15" value="0.9965430951671485" />
-      <entry key="M30" value="1.0175826026761532" />
-      <entry key="H1" value="1.1386927414879775" />
-      <entry key="H2" value="1.373221879954" />
-      <entry key="H4" value="1.6110717257350717" />
-      <entry key="D1" value="1.9212092124146118" />
-      <entry key="W1" value="1.9883448593966866" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="3.718677081046696E-142" />
+      <entry key="S5" value="2.680127079877823E-57" />
+      <entry key="S10" value="5.176994378862912E-29" />
+      <entry key="S30" value="3.726998613098362E-10" />
+      <entry key="S60" value="1.9305436055936045E-5" />
+      <entry key="M2" value="0.004393795176830167" />
+      <entry key="M5" value="0.1140606712625031" />
+      <entry key="M10" value="0.3377312146428598" />
+      <entry key="M15" value="0.4851519393517394" />
+      <entry key="M30" value="0.7100035448960907" />
+      <entry key="H1" value="0.9511564868726408" />
+      <entry key="H2" value="1.255056928277283" />
+      <entry key="H4" value="1.5401968517199451" />
+      <entry key="D1" value="1.9068574139314889" />
+      <entry key="W1" value="1.9862161324444225" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.015375290466864418" />
-      <entry key="MS500" value="1.0417330288808397" />
-      <entry key="S2" value="4.564075716322496" />
-      <entry key="S5" value="8.076079672259507" />
-      <entry key="S10" value="10.413310495330059" />
-      <entry key="S30" value="12.62255841486023" />
-      <entry key="S60" value="13.28513939848733" />
-      <entry key="M2" value="13.65388980885584" />
-      <entry key="M5" value="15.123175317536985" />
-      <entry key="M10" value="19.40455067437262" />
-      <entry key="M15" value="23.213053905020686" />
-      <entry key="M30" value="34.969790730864" />
-      <entry key="H1" value="95.70230893335516" />
-      <entry key="H2" value="286.99659549832194" />
-      <entry key="H4" value="562.5087862023014" />
-      <entry key="D1" value="1026.721054271602" />
-      <entry key="W1" value="1141.5642896750903" />
+      <entry key="MS100" value="1.6295658536607618" />
+      <entry key="MS500" value="3.503260524998222" />
+      <entry key="S2" value="6.696056635831296" />
+      <entry key="S5" value="13.558797663494717" />
+      <entry key="S10" value="20.537843552247285" />
+      <entry key="S30" value="28.9846514515938" />
+      <entry key="S60" value="33.069766287417025" />
+      <entry key="M2" value="39.0832759267753" />
+      <entry key="M5" value="50.599123256987134" />
+      <entry key="M10" value="61.78683207152837" />
+      <entry key="M15" value="69.27370190524803" />
+      <entry key="M30" value="85.60544720086772" />
+      <entry key="H1" value="142.96575460903838" />
+      <entry key="H2" value="326.29272127986" />
+      <entry key="H4" value="602.2534259745905" />
+      <entry key="D1" value="1083.9656312612763" />
+      <entry key="W1" value="1205.329878098643" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -120,7 +97,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "main",
     "javascript.preferred.runtime.type.id": "node",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
@@ -186,7 +163,8 @@
     <MESSAGE value="Implemented JPA Entity Classes and scaffoled spring data JPA repositories" />
     <MESSAGE value="Implemented data transfer objects, implemented controller stubs," />
     <MESSAGE value="Define service interface and implementation class, Define computing service for pre-disaster risk scores, Define service to compute restoration priority scores, Define decision rules, orchestrator service" />
-    <option name="LAST_COMMIT_MESSAGE" value="Define service interface and implementation class, Define computing service for pre-disaster risk scores, Define service to compute restoration priority scores, Define decision rules, orchestrator service" />
+    <MESSAGE value="Start of hour 6" />
+    <option name="LAST_COMMIT_MESSAGE" value="Start of hour 6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
