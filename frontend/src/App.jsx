@@ -1,31 +1,37 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import { AppBar, Toolbar, Typography, Button, Container } from '@mui/material';
+import React, { useState } from 'react';
+import { AppBar, Toolbar, Typography, Tabs, Tab, Box, Container } from '@mui/material';
+import ExecutiveDashboard from './pages/ExecutiveDashboard';
 import DrrmDashboard from './pages/DrrmDashboard';
 import EngineerDashboard from './pages/EngineerDashboard';
-import ExecutiveDashboard from './pages/ExecutiveDashboard';
 
 export default function App() {
+    const [activeTab, setActiveTab] = useState(0);
+
     return (
-        <Router>
-            <AppBar position="static">
+        <Box sx={{ flexGrow: 1, backgroundColor: '#f4f6f8', minHeight: '100vh' }}>
+            <AppBar position="static" color="primary">
                 <Toolbar>
-                    <Typography variant="h6" sx={{ flexGrow: 1 }}>
-                        Disaster Telecom Decision Intelligence
+                    <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 'bold' }}>
+                        Disaster Telecom Intelligence
                     </Typography>
-                    <Button color="inherit" component={Link} to="/drrm">DRRM View</Button>
-                    <Button color="inherit" component={Link} to="/engineer">Engineer View</Button>
-                    <Button color="inherit" component={Link} to="/executive">Executive View</Button>
+                    <Tabs
+                        value={activeTab}
+                        onChange={(e, newValue) => setActiveTab(newValue)}
+                        textColor="inherit"
+                        indicatorColor="secondary"
+                    >
+                        <Tab label="Executive View" />
+                        <Tab label="DRRM Priority Queue" />
+                        <Tab label="Engineering Diagnostics" />
+                    </Tabs>
                 </Toolbar>
             </AppBar>
-            <Container sx={{ mt: 4 }}>
-                <Routes>
-                    <Route path="/" element={<DrrmDashboard />} />
-                    <Route path="/drrm" element={<DrrmDashboard />} />
-                    <Route path="/engineer" element={<EngineerDashboard />} />
-                    <Route path="/executive" element={<ExecutiveDashboard />} />
-                </Routes>
+
+            <Container maxWidth="xl" sx={{ mt: 4, pb: 4 }}>
+                {activeTab === 0 && <ExecutiveDashboard />}
+                {activeTab === 1 && <DrrmDashboard />}
+                {activeTab === 2 && <EngineerDashboard />}
             </Container>
-        </Router>
+        </Box>
     );
 }
