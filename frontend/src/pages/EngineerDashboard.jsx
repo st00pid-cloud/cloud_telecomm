@@ -1,158 +1,101 @@
-import React, { useState, useEffect } from 'react';
-import {
-    Box, Typography, Card, CardContent, Grid, Table, TableBody, TableCell,
-    TableContainer, TableHead, TableRow, Paper, Chip, TextField, CircularProgress, Stack
-} from '@mui/material';
-import { getSiteStatuses, getTelecomSites } from '../api/telecomApi';
+// pages/EngineerDashboard.jsx
+import React from 'react';
+import { Box, Grid, Card, Table, TableHead, TableBody, TableRow, TableCell, Stack, TextField, MenuItem, Typography } from '@mui/material';
+import SectionHeader from '../components/SectionHeader';
+import KpiCard from '../components/KpiCard';
+import StatusBadge from '../components/StatusBadge';
+import EmptyState from '../components/EmptyState';
+import SettingsSuggestOutlinedIcon from '@mui/icons-material/SettingsSuggestOutlined';
+
+const incidents = [
+    { site: 'Rosario Cell Site 04', cause: 'Power Failure', status: 'critical' },
+    { site: 'Naguilian Backhaul Link', cause: 'Backhaul Loss', status: 'warning' },
+    { site: 'Bacnotan Tower B', cause: 'Physical Damage', status: 'critical' },
+];
 
 export default function EngineerDashboard() {
-    const [data, setData] = useState([]);
-    const [search, setSearch] = useState('');
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        const fetchDiagnostics = async () => {
-            try {
-                setLoading(true);
-                const [statusRes, siteRes] = await Promise.all([
-                    getSiteStatuses().catch(() => ({ data: [] })),
-                    getTelecomSites().catch(() => ({ data: [] }))
-                ]);
-
-                const sitesMap = new Map((siteRes.data || []).map(s => [s.siteId, s]));
-                const combined = (statusRes.data || []).map(stat => ({
-                    ...stat,
-                    meta: sitesMap.get(stat.siteId) || {}
-                }));
-
-                setData(combined);
-            } catch (err) {
-                console.error('Failed to load engineering telemetry:', err);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchDiagnostics();
-    }, []);
-
-    const filteredData = data.filter(item =>
-        item.siteId?.toLowerCase().includes(search.toLowerCase()) ||
-        item.meta?.municipality?.toLowerCase().includes(search.toLowerCase())
-    );
-
-    const getStatusChip = (status) => {
-        const s = (status || '').toLowerCase();
-        if (s === 'online' || s === 'up' || s === 'none') return <Chip label={status} color="success" size="small" />;
-        if (s === 'unstable' || s === 'degraded' || s === 'minor') return <Chip label={status} color="warning" size="small" />;
-        return <Chip label={status} color="error" size="small" sx={{ fontWeight: 'bold' }} />;
-    };
+    const hasIncidents = incidents.length > 0;
 
     return (
         <Box>
-            <Typography variant="h4" fontWeight="bold" mb={1}>Telecom Engineering Diagnostics</Typography>
-            <Typography variant="body2" color="text.secondary" mb={3}>
-                Infrastructure health monitoring, backhaul fiber cut tracking, and alternative channel status
-            </Typography>
+            <SectionHeader
+                title="Telecom Engineering"
+                subtitle="Infrastructure diagnostics and restoration priorities"
+                actions={
+                    <Stack direction="row" spacing={1.5}>
+                        <TextField select size="small" defaultValue="all" sx={{ minWidth: 160 }} label="Root cause">
+                            <MenuItem value="all">All causes</MenuItem>
+                            <MenuItem value="power">Power Failure</MenuItem>
+                            <MenuItem value="backhaul">Backhaul Loss</MenuItem>
+                            <MenuItem value="damage">Physical Damage</MenuItem>
+                        </TextField>
+                        <TextField select size="small" defaultValue="all" sx={{ minWidth: 160 }} label="Status">
+                            <MenuItem value="all">All statuses</MenuItem>
+                            <MenuItem value="critical">Critical</MenuItem>
+                            <MenuItem value="warning">Warning</MenuItem>
+                        </TextField>
+                    </Stack>
+                }
+            />
 
-            <Grid container spacing={2} mb={3}>
+            <Grid container spacing={2} sx={{ mb: 3 }}>
                 <Grid item xs={12} md={3}>
-                    <Card sx={{ bgcolor: '#ffebee' }}>
-                        <CardContent>
-                            <Typography color="error" variant="subtitle2">Power Outages</Typography>
-                            <Typography variant="h4" fontWeight="bold">
-                                {data.filter(d => d.powerStatus === 'down').length}
-                            </Typography>
-                        </CardContent>
-                    </Card>
+                    <KpiCard label="Connectivity Issues" value="14" status="critical" />
                 </Grid>
                 <Grid item xs={12} md={3}>
-                    <Card sx={{ bgcolor: '#fff3e0' }}>
-                        <CardContent>
-                            <Typography color="warning.main" variant="subtitle2">Fiber / Backhaul Cuts</Typography>
-                            <Typography variant="h4" fontWeight="bold">
-                                {data.filter(d => d.backhaulStatus === 'cut').length}
-                            </Typography>
-                        </CardContent>
-                    </Card>
+                    <KpiCard label="Power Failures" value="9" status="warning" />
                 </Grid>
                 <Grid item xs={12} md={3}>
-                    <Card sx={{ bgcolor: '#e8f5e9' }}>
-                        <CardContent>
-                            <Typography color="success.main" variant="subtitle2">Backup Available</Typography>
-                            <Typography variant="h4" fontWeight="bold">
-                                {data.filter(d => d.meta?.backupAvailable).length}
-                            </Typography>
-                        </CardContent>
-                    </Card>
+                    <KpiCard label="Backhaul Problems" value="5" status="warning" />
                 </Grid>
                 <Grid item xs={12} md={3}>
-                    <Card sx={{ bgcolor: '#e3f2fd' }}>
-                        <CardContent>
-                            <Typography color="primary" variant="subtitle2">Total Monitored Sites</Typography>
-                            <Typography variant="h4" fontWeight="bold">{data.length}</Typography>
-                        </CardContent>
-                    </Card>
+                    <KpiCard label="Physical Damage" value="3" status="critical" />
                 </Grid>
             </Grid>
 
-            <Box mb={2}>
-                <TextField
-                    label="Filter by Site ID or Municipality"
-                    variant="outlined"
-                    size="small"
-                    fullWidth
-                    value={search}
-                    onChange={(e) => setSearch(e.target.value)}
-                />
-            </Box>
-
-            <TableContainer component={Paper} elevation={2}>
-                <Table>
-                    <TableHead sx={{ backgroundColor: '#37474f' }}>
-                        <TableRow>
-                            <TableCell sx={{ color: '#fff', fontWeight: 'bold' }}>Site ID</TableCell>
-                            <TableCell sx={{ color: '#fff', fontWeight: 'bold' }}>Location</TableCell>
-                            <TableCell sx={{ color: '#fff', fontWeight: 'bold' }}>Connectivity</TableCell>
-                            <TableCell sx={{ color: '#fff', fontWeight: 'bold' }}>Power Status</TableCell>
-                            <TableCell sx={{ color: '#fff', fontWeight: 'bold' }}>Backhaul Status</TableCell>
-                            <TableCell sx={{ color: '#fff', fontWeight: 'bold' }}>Physical Damage</TableCell>
-                            <TableCell sx={{ color: '#fff', fontWeight: 'bold' }}>Backup Support</TableCell>
-                        </TableRow>
-                    </TableHead>
-                    <TableBody>
-                        {loading ? (
-                            <TableRow>
-                                <TableCell colSpan={7} align="center" sx={{ py: 3 }}>
-                                    <CircularProgress size={30} />
-                                </TableCell>
-                            </TableRow>
-                        ) : filteredData.length === 0 ? (
-                            <TableRow>
-                                <TableCell colSpan={7} align="center">No diagnostic records matched.</TableCell>
-                            </TableRow>
+            <Grid container spacing={2}>
+                <Grid item xs={12} md={8}>
+                    <Card sx={{ p: 0 }}>
+                        <Box sx={{ px: 2.5, pt: 2 }}>
+                            <Typography variant="h6">Site-Level Incidents</Typography>
+                        </Box>
+                        {hasIncidents ? (
+                            <Table size="small" sx={{ mt: 1 }}>
+                                <TableHead>
+                                    <TableRow>
+                                        <TableCell>Site</TableCell>
+                                        <TableCell>Root Cause</TableCell>
+                                        <TableCell>Status</TableCell>
+                                    </TableRow>
+                                </TableHead>
+                                <TableBody>
+                                    {incidents.map((row) => (
+                                        <TableRow key={row.site}>
+                                            <TableCell>{row.site}</TableCell>
+                                            <TableCell>{row.cause}</TableCell>
+                                            <TableCell><StatusBadge status={row.status} /></TableCell>
+                                        </TableRow>
+                                    ))}
+                                </TableBody>
+                            </Table>
                         ) : (
-                            filteredData.map((item) => (
-                                <TableRow key={item.siteId} hover>
-                                    <TableCell sx={{ fontWeight: 'bold' }}>{item.siteId}</TableCell>
-                                    <TableCell>{item.meta?.municipality || 'N/A'}, {item.meta?.province || ''}</TableCell>
-                                    <TableCell>{item.meta?.connectivityType || 'N/A'}</TableCell>
-                                    <TableCell>{getStatusChip(item.powerStatus)}</TableCell>
-                                    <TableCell>{getStatusChip(item.backhaulStatus)}</TableCell>
-                                    <TableCell>{getStatusChip(item.physicalDamage)}</TableCell>
-                                    <TableCell>
-                                        {item.meta?.backupAvailable ? (
-                                            <Chip label="Yes" color="success" variant="outlined" size="small" />
-                                        ) : (
-                                            <Chip label="No" color="default" variant="outlined" size="small" />
-                                        )}
-                                    </TableCell>
-                                </TableRow>
-                            ))
+                            <EmptyState
+                                icon={<SettingsSuggestOutlinedIcon fontSize="small" />}
+                                title="No Active Infrastructure Incidents"
+                                description="All monitored telecom assets are operating normally based on available telemetry."
+                            />
                         )}
-                    </TableBody>
-                </Table>
-            </TableContainer>
+                    </Card>
+                </Grid>
+                <Grid item xs={12} md={4}>
+                    <Card sx={{ p: 2.5, height: '100%' }}>
+                        <Typography variant="h6" sx={{ mb: 1.5 }}>Root Cause Distribution</Typography>
+                        <Typography variant="body2" color="text.secondary">
+                            Chart goes here — wire up existing distribution data source.
+                        </Typography>
+                    </Card>
+                </Grid>
+            </Grid>
         </Box>
     );
 }

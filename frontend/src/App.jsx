@@ -1,37 +1,82 @@
-import React, { useState } from 'react';
-import { AppBar, Toolbar, Typography, Tabs, Tab, Box, Container } from '@mui/material';
-import ExecutiveDashboard from './pages/ExecutiveDashboard';
+// App.jsx
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { ThemeProvider, CssBaseline } from '@mui/material';
+import { AppBar, Toolbar, Typography, Box, Container, Stack } from '@mui/material';
+import CellTowerIcon from '@mui/icons-material/CellTower';
+import theme from './theme';
 import DrrmDashboard from './pages/DrrmDashboard';
 import EngineerDashboard from './pages/EngineerDashboard';
+import ExecutiveDashboard from './pages/ExecutiveDashboard';
 
-export default function App() {
-    const [activeTab, setActiveTab] = useState(0);
+const NAV_ITEMS = [
+    { label: 'DRRM', to: '/drrm' },
+    { label: 'Engineer', to: '/engineer' },
+    { label: 'Executive', to: '/executive' },
+];
+
+function NavLink({ to, label }) {
+    const location = useLocation();
+    const active = location.pathname === to || (to === '/drrm' && location.pathname === '/');
 
     return (
-        <Box sx={{ flexGrow: 1, backgroundColor: '#f4f6f8', minHeight: '100vh' }}>
-            <AppBar position="static" color="primary">
-                <Toolbar>
-                    <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 'bold' }}>
-                        KONEK
-                    </Typography>
-                    <Tabs
-                        value={activeTab}
-                        onChange={(e, newValue) => setActiveTab(newValue)}
-                        textColor="inherit"
-                        indicatorColor="secondary"
-                    >
-                        <Tab label="Executive View" />
-                        <Tab label="DRRM Personnel View" />
-                        <Tab label="Engineer View" />
-                    </Tabs>
+        <Box
+            component={Link}
+            to={to}
+            sx={{
+                textDecoration: 'none',
+                color: active ? 'primary.main' : 'text.secondary',
+                fontSize: 14,
+                fontWeight: active ? 600 : 500,
+                px: 1.5,
+                py: 0.75,
+                borderRadius: 1,
+                borderBottom: active ? '2px solid' : '2px solid transparent',
+                borderColor: active ? 'primary.main' : 'transparent',
+                '&:hover': { color: 'primary.main', backgroundColor: 'rgba(26,115,232,0.04)' },
+            }}
+        >
+            {label}
+        </Box>
+    );
+}
+
+function Shell() {
+    return (
+        <>
+            <AppBar position="sticky" elevation={0}>
+                <Toolbar sx={{ minHeight: 56, gap: 3 }}>
+                    <Stack direction="row" alignItems="center" spacing={1}>
+                        <CellTowerIcon sx={{ color: 'primary.main', fontSize: 22 }} />
+                        <Typography sx={{ fontWeight: 600, fontSize: 16 }}>KONEK</Typography>
+                    </Stack>
+                    <Box sx={{ flexGrow: 1 }} />
+                    <Stack direction="row" spacing={0.5}>
+                        {NAV_ITEMS.map((item) => (
+                            <NavLink key={item.to} {...item} />
+                        ))}
+                    </Stack>
                 </Toolbar>
             </AppBar>
-
-            <Container maxWidth="xl" sx={{ mt: 4, pb: 4 }}>
-                {activeTab === 0 && <ExecutiveDashboard />}
-                {activeTab === 1 && <DrrmDashboard />}
-                {activeTab === 2 && <EngineerDashboard />}
+            <Container maxWidth="xl" sx={{ py: 3 }}>
+                <Routes>
+                    <Route path="/" element={<DrrmDashboard />} />
+                    <Route path="/drrm" element={<DrrmDashboard />} />
+                    <Route path="/engineer" element={<EngineerDashboard />} />
+                    <Route path="/executive" element={<ExecutiveDashboard />} />
+                </Routes>
             </Container>
-        </Box>
+        </>
+    );
+}
+
+export default function App() {
+    return (
+        <ThemeProvider theme={theme}>
+            <CssBaseline />
+            <Router>
+                <Shell />
+            </Router>
+        </ThemeProvider>
     );
 }
