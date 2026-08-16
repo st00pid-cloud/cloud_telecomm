@@ -12,7 +12,7 @@ export default function App() {
             <AppBar position="static" color="primary">
                 <Toolbar>
                     <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 'bold' }}>
-                        Disaster Telecom Intelligence
+                        KONEK
                     </Typography>
                     <Tabs
                         value={activeTab}
@@ -21,8 +21,8 @@ export default function App() {
                         indicatorColor="secondary"
                     >
                         <Tab label="Executive View" />
-                        <Tab label="DRRM Priority Queue" />
-                        <Tab label="Engineering Diagnostics" />
+                        <Tab label="DRRM Personnel View" />
+                        <Tab label="Engineer View" />
                     </Tabs>
                 </Toolbar>
             </AppBar>
