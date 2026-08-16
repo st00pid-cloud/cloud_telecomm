@@ -3,8 +3,12 @@ package com.accen.disastertelecom.entity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.MapsId;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,6 +23,11 @@ public class SiteStatus {
     @Id
     @Column(name = "site_id", length = 50)
     private String siteId;
+
+    @OneToOne
+    @MapsId
+    @JoinColumn(name = "site_id")
+    private TelecomSite site;
 
     @Column(name = "power_status", nullable = false, length = 50)
     private String powerStatus;

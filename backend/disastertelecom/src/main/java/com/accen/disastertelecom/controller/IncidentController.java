@@ -15,9 +15,16 @@ public class IncidentController {
 
     @PostMapping("/process")
     public ResponseEntity<ScoreResult> processIncident(@RequestBody IncidentPayload payload) {
-        ScoreResult mockResult = new ScoreResult(
-                payload.getSiteId(), 78.5, 85.0, "power outage", "satellite_fallback", "Critical", OffsetDateTime.now()
-        );
+        ScoreResult mockResult = ScoreResult.builder()
+                .siteId(payload.getSiteId())
+                .riskScore(78.5)
+                .priorityScore(85.0)
+                .rootCause("power outage")
+                .fallbackStatus("satellite_fallback")
+                .severity("Critical")
+                .processedAt(OffsetDateTime.now())
+                .build();
+
         return ResponseEntity.status(HttpStatus.CREATED).body(mockResult);
     }
 
