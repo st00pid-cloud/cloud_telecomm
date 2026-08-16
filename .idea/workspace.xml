@@ -41,16 +41,7 @@
       <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/resources/application.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/resources/schema.sql" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/test/java/com/accen/disastertelecom/DisastertelecomApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/src/api/telecomApi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/frontend/vite.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/counter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/main.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/DrrmDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/DrrmDashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/EngineerDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/EngineerDashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ExecutiveDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ExecutiveDashboard.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,7 +54,7 @@
         <entry key="$PROJECT_DIR$/backend/disastertelecom" value="main" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backend/disastertelecom" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -74,23 +65,23 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.032855430673492" />
-      <entry key="MS500" value="2.7855359693033086" />
-      <entry key="S2" value="6.185808929265361" />
-      <entry key="S5" value="7.6880588106007925" />
-      <entry key="S10" value="8.322645536938655" />
-      <entry key="S30" value="9.008746969054178" />
-      <entry key="S60" value="9.37749043010857" />
-      <entry key="M2" value="9.696720162854568" />
-      <entry key="M5" value="13.102725658943989" />
-      <entry key="M10" value="25.674059287080794" />
-      <entry key="M15" value="40.9327394835058" />
-      <entry key="M30" value="88.06880334936582" />
-      <entry key="H1" value="153.90284488849665" />
-      <entry key="H2" value="235.93767178606993" />
-      <entry key="H4" value="419.57480794733993" />
-      <entry key="D1" value="1242.7788118876342" />
-      <entry key="W1" value="1591.6328594735762" />
+      <entry key="MS100" value="1.0121122572938785" />
+      <entry key="MS500" value="2.2738821243773932" />
+      <entry key="S2" value="4.9446891597750104" />
+      <entry key="S5" value="6.058850894327483" />
+      <entry key="S10" value="6.506837701112489" />
+      <entry key="S30" value="7.6065030651873515" />
+      <entry key="S60" value="13.616712713145498" />
+      <entry key="M2" value="26.969375494620277" />
+      <entry key="M5" value="47.992457063318156" />
+      <entry key="M10" value="66.73271614982114" />
+      <entry key="M15" value="83.23667533382529" />
+      <entry key="M30" value="131.1914798081878" />
+      <entry key="H1" value="200.37806368754966" />
+      <entry key="H2" value="286.91927150707625" />
+      <entry key="H4" value="472.34785607875824" />
+      <entry key="D1" value="1301.84432966053" />
+      <entry key="W1" value="1655.548420123881" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
@@ -98,37 +89,37 @@
       <entry key="S2" value="0.0" />
       <entry key="S5" value="0.0" />
       <entry key="S10" value="0.0" />
-      <entry key="S30" value="1.762E-320" />
-      <entry key="S60" value="1.3266874356788931E-160" />
-      <entry key="M2" value="1.1518191853233216E-80" />
-      <entry key="M5" value="1.0581658055345947E-32" />
-      <entry key="M10" value="1.0286795400504438E-16" />
-      <entry key="M15" value="2.1962597633968428E-11" />
-      <entry key="M30" value="4.777090663469145E-6" />
-      <entry key="H1" value="0.002467194893451755" />
-      <entry key="H2" value="0.06392035336033493" />
-      <entry key="H4" value="0.3475874618028278" />
-      <entry key="D1" value="1.4878741489011018" />
-      <entry key="W1" value="1.9170496419291614" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="1.4904997499581313E-163" />
+      <entry key="M2" value="3.8606990946694104E-82" />
+      <entry key="M5" value="2.7206105731206335E-33" />
+      <entry key="M10" value="5.215986169173335E-17" />
+      <entry key="M15" value="1.3965438969421343E-11" />
+      <entry key="M30" value="3.8093328930522703E-6" />
+      <entry key="H1" value="0.002203160715051421" />
+      <entry key="H2" value="0.06040328079661237" />
+      <entry key="H4" value="0.33788956719398955" />
+      <entry key="D1" value="1.4808735568831033" />
+      <entry key="W1" value="1.915758478241357" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.11359145261682987" />
-      <entry key="MS500" value="2.377454068358758" />
-      <entry key="S2" value="6.058269241246859" />
-      <entry key="S5" value="7.634201544104224" />
-      <entry key="S10" value="8.295177390419042" />
-      <entry key="S30" value="8.999383266138457" />
-      <entry key="S60" value="9.37274677308697" />
-      <entry key="M2" value="9.694304499584527" />
-      <entry key="M5" value="13.101253684848421" />
-      <entry key="M10" value="25.672536636223303" />
-      <entry key="M15" value="40.93125418172306" />
-      <entry key="M30" value="88.06753008828903" />
-      <entry key="H1" value="153.90434940331423" />
-      <entry key="H2" value="236.00083861659442" />
-      <entry key="H4" value="419.92160534188383" />
-      <entry key="D1" value="1244.2662454758297" />
-      <entry key="W1" value="1593.5498279465864" />
+      <entry key="MS100" value="0.04223125272993099" />
+      <entry key="MS500" value="1.7641650408536567" />
+      <entry key="S2" value="4.778800307145838" />
+      <entry key="S5" value="5.9884598650206184" />
+      <entry key="S10" value="6.470919268103145" />
+      <entry key="S30" value="7.593399459632004" />
+      <entry key="S60" value="13.606719000568935" />
+      <entry key="M2" value="26.96068586727204" />
+      <entry key="M5" value="47.98668290414488" />
+      <entry key="M10" value="66.7287578145258" />
+      <entry key="M15" value="83.23348199907599" />
+      <entry key="M30" value="131.1892731701855" />
+      <entry key="H1" value="200.37879391069055" />
+      <entry key="H2" value="286.9786515620807" />
+      <entry key="H4" value="472.68482089436475" />
+      <entry key="D1" value="1303.3247384478927" />
+      <entry key="W1" value="1657.464093729399" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -153,7 +144,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "e07501a2",
     "javascript.preferred.runtime.type.id": "node",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
