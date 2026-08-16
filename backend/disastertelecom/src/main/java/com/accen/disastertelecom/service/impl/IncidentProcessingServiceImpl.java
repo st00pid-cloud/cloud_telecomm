@@ -32,9 +32,20 @@ public class IncidentProcessingServiceImpl implements IncidentProcessingOrchestr
         // 1. Normalize payload data
         IncidentPayload normalized = transformationService.normalizeIncidentData(payload);
 
-        // 2. Retrieve telecom site context
+// 2. Retrieve telecom site context (or persist fallback if missing)
         TelecomSite site = telecomSiteRepository.findById(normalized.getSiteId())
-                .orElse(new TelecomSite(normalized.getSiteId(), "Region VI", "Iloilo", "Oton", "cellular", "telco", false, "none"));
+                .orElseGet(() -> telecomSiteRepository.save(
+                        TelecomSite.builder()
+                                .siteId(normalized.getSiteId())
+                                .region("Region VI")
+                                .province("Iloilo")
+                                .municipality("Oton")
+                                .connectivityType("cellular")
+                                .providerType("telco")
+                                .backupAvailable(false)
+                                .nearCriticalFacility("none")
+                                .build()
+                ));
 
         // 3. Classify Root Cause
         String rootCause = rootCauseClassifierService.classifyRootCause(
@@ -47,20 +58,30 @@ public class IncidentProcessingServiceImpl implements IncidentProcessingOrchestr
                 normalized.getAffectedUsersEst(), site.getNearCriticalFacility(), site.getBackupAvailable(), normalized.getPowerStatus()
         );
 
-        // 5. Update Operational Site Status
-        SiteStatus status = new SiteStatus(
-                normalized.getSiteId(), normalized.getPowerStatus(), normalized.getBackhaulStatus(),
-                normalized.getPhysicalDamage(), "down", normalized.getAffectedUsersEst()
-        );
+// 5. Update Operational Site Status
+        SiteStatus status = SiteStatus.builder()
+                .siteId(normalized.getSiteId())
+                .powerStatus(normalized.getPowerStatus())
+                .backhaulStatus(normalized.getBackhaulStatus())
+                .physicalDamage(normalized.getPhysicalDamage())
+                .currentStatus("down")
+                .affectedUsersEst(normalized.getAffectedUsersEst())
+                .build();
         siteStatusRepository.save(status);
 
-        // 6. Persist and return computed decision result
+// 6. Persist and return computed decision result
         String severity = priorityScore > 75.0 ? "Critical" : priorityScore > 50.0 ? "High" : "Medium";
         String fallbackStatus = site.getBackupAvailable() ? "satellite_fallback" : "none_available";
 
-        ScoreResult result = new ScoreResult(
-                normalized.getSiteId(), riskScore, priorityScore, rootCause, fallbackStatus, severity, OffsetDateTime.now()
-        );
+        ScoreResult result = ScoreResult.builder()
+                .siteId(normalized.getSiteId())
+                .riskScore(riskScore)
+                .priorityScore(priorityScore)
+                .rootCause(rootCause)
+                .fallbackStatus(fallbackStatus)
+                .severity(severity)
+                .processedAt(OffsetDateTime.now())
+                .build();
 
         return scoreResultRepository.save(result);
     }
