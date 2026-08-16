@@ -2,30 +2,25 @@ package com.accen.disastertelecom.controller;
 
 import com.accen.disastertelecom.dto.IncidentPayload;
 import com.accen.disastertelecom.entity.ScoreResult;
+import com.accen.disastertelecom.service.IncidentProcessingOrchestrationService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.OffsetDateTime;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/incidents")
+@RequiredArgsConstructor
 public class IncidentController {
+
+    private final IncidentProcessingOrchestrationService incidentProcessingService;
 
     @PostMapping("/process")
     public ResponseEntity<ScoreResult> processIncident(@RequestBody IncidentPayload payload) {
-        ScoreResult mockResult = ScoreResult.builder()
-                .siteId(payload.getSiteId())
-                .riskScore(78.5)
-                .priorityScore(85.0)
-                .rootCause("power outage")
-                .fallbackStatus("satellite_fallback")
-                .severity("Critical")
-                .processedAt(OffsetDateTime.now())
-                .build();
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(mockResult);
+        ScoreResult result = incidentProcessingService.processIncident(payload);
+        return ResponseEntity.status(HttpStatus.CREATED).body(result);
     }
 
     @GetMapping

@@ -5,7 +5,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f5b04a4-dc0f-4ada-8337-84262b58296d" name="Changes" comment="Start of hour 6">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/DisastertelecomApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/config/DataInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/controller/DashboardController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/controller/EventController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/controller/IncidentController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/controller/ScoringController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/controller/SiteController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/dto/DrrmDashboardResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/dto/EngineerDashboardResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/dto/EventRegistration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/dto/ExecutiveDashboardResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/dto/IncidentPayload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/entity/AlertRule.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/entity/DisasterEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/entity/ScoreResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/entity/SiteStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/entity/TelecomSite.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/repository/AlertRuleRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/repository/DisasterEventRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/repository/ScoreResultRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/repository/SiteStatusRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/repository/TelecomSiteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/service/DataTransformationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/service/IncidentProcessingOrchestrationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/service/PriorityScoringService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/service/RiskScoringService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/service/RootCauseClassifierService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/service/impl/DataTransformationServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/service/impl/IncidentProcessingServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/service/impl/PriorityScoringServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/service/impl/RiskScoringServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/java/com/accen/disastertelecom/service/impl/RootCauseClassifierServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/main/resources/schema.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/src/test/java/com/accen/disastertelecom/DisastertelecomApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +53,7 @@
         <entry key="$PROJECT_DIR$/backend/disastertelecom" value="main" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backend/disastertelecom" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -29,65 +64,65 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.003757794982672" />
-      <entry key="MS500" value="1.6220517330255322" />
-      <entry key="S2" value="3.8364607385841714" />
-      <entry key="S5" value="4.974159075888377" />
-      <entry key="S10" value="5.607113230339152" />
-      <entry key="S30" value="11.662543966966224" />
-      <entry key="S60" value="21.65312158159055" />
-      <entry key="M2" value="32.9951514908298" />
-      <entry key="M5" value="48.945189311693035" />
-      <entry key="M10" value="71.4580955089981" />
-      <entry key="M15" value="90.15858150210454" />
-      <entry key="M30" value="127.18245386766772" />
-      <entry key="H1" value="193.45433066801633" />
-      <entry key="H2" value="373.32935993165614" />
-      <entry key="H4" value="653.1530740512485" />
-      <entry key="D1" value="1163.5662963350592" />
-      <entry key="W1" value="1295.3561705433683" />
+      <entry key="MS100" value="1.0015997829921268" />
+      <entry key="MS500" value="1.5172890853856393" />
+      <entry key="S2" value="4.64570788086679" />
+      <entry key="S5" value="9.637351031944018" />
+      <entry key="S10" value="15.627187280839117" />
+      <entry key="S30" value="24.089434039935828" />
+      <entry key="S60" value="27.245594518719574" />
+      <entry key="M2" value="29.04642130300553" />
+      <entry key="M5" value="31.827927266753857" />
+      <entry key="M10" value="44.080721428791094" />
+      <entry key="M15" value="60.884207322067354" />
+      <entry key="M30" value="106.07617846770246" />
+      <entry key="H1" value="181.52928045857416" />
+      <entry key="H2" value="360.71179775323367" />
+      <entry key="H4" value="646.0201210011666" />
+      <entry key="D1" value="1189.9185203776624" />
+      <entry key="W1" value="1334.0160556870862" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
-      <entry key="S5" value="1.5642394557386927E-141" />
-      <entry key="S10" value="3.9550467200005155E-71" />
-      <entry key="S30" value="3.407092093593294E-24" />
-      <entry key="S60" value="1.8458310035301914E-12" />
-      <entry key="M2" value="1.3586136329104722E-6" />
-      <entry key="M5" value="0.004500268099883156" />
-      <entry key="M10" value="0.06708453812599872" />
-      <entry key="M15" value="0.16516268197186837" />
-      <entry key="M30" value="0.4142643817004693" />
-      <entry key="H1" value="0.7265416448766137" />
-      <entry key="H2" value="1.0969016627644772" />
-      <entry key="H4" value="1.4398868517652454" />
-      <entry key="D1" value="1.885573975568073" />
-      <entry key="W1" value="1.983033848443863" />
+      <entry key="S5" value="8.30989583828351E-236" />
+      <entry key="S10" value="2.882688994373735E-118" />
+      <entry key="S30" value="6.605909151005089E-40" />
+      <entry key="S60" value="2.5701963253815936E-20" />
+      <entry key="M2" value="1.603183185222946E-10" />
+      <entry key="M5" value="1.207795089821933E-4" />
+      <entry key="M10" value="0.010990055110250847" />
+      <entry key="M15" value="0.04944968741242503" />
+      <entry key="M30" value="0.2266748862632471" />
+      <entry key="H1" value="0.5374318725854205" />
+      <entry key="H2" value="0.9434071161856281" />
+      <entry key="H4" value="1.3353468691287425" />
+      <entry key="D1" value="1.862035099631799" />
+      <entry key="W1" value="1.979478275468037" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.017160886672115336" />
-      <entry key="MS500" value="0.8640925328744721" />
-      <entry key="S2" value="3.478310923611739" />
-      <entry key="S5" value="4.805119783331294" />
-      <entry key="S10" value="5.516350053666716" />
-      <entry key="S30" value="11.621087282629428" />
-      <entry key="S60" value="21.6241402132191" />
-      <entry key="M2" value="32.97533483221398" />
-      <entry key="M5" value="48.93871710152005" />
-      <entry key="M10" value="71.51808405063612" />
-      <entry key="M15" value="90.31810025015156" />
-      <entry key="M30" value="127.5928715532052" />
-      <entry key="H1" value="194.17813942714795" />
-      <entry key="H2" value="374.42404942057556" />
-      <entry key="H4" value="654.5912608220499" />
-      <entry key="D1" value="1165.4514151574258" />
-      <entry key="W1" value="1297.3391331641794" />
+      <entry key="MS100" value="0.00845091362018922" />
+      <entry key="MS500" value="0.7207775543877493" />
+      <entry key="S2" value="4.239889002801978" />
+      <entry key="S5" value="9.429983044594055" />
+      <entry key="S10" value="15.506038961853058" />
+      <entry key="S30" value="24.041520558516048" />
+      <entry key="S60" value="27.22025334609689" />
+      <entry key="M2" value="29.03335493330355" />
+      <entry key="M5" value="31.822417697587987" />
+      <entry key="M10" value="44.08784269384196" />
+      <entry key="M15" value="60.93014589896118" />
+      <entry key="M30" value="106.29982415941303" />
+      <entry key="H1" value="182.0642236130732" />
+      <entry key="H2" value="361.65306715860345" />
+      <entry key="H4" value="647.3537732541608" />
+      <entry key="D1" value="1191.78008628339" />
+      <entry key="W1" value="1335.9954600435444" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="Security Analysis" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5,
@@ -108,7 +143,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "e07501a2",
     "javascript.preferred.runtime.type.id": "node",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
@@ -121,16 +156,19 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_interpreter_path": "C:/Users/justine.mae.macario/AppData/Roaming/JetBrains/IntelliJIdea2026.2/node/versions/24.18.0/node",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "settings.qodana",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "to.speed.mode.migration.done": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\justine.mae.macario\cloud-disaster-telecom-decision-intelligence\data\schemas" />
-      <recent name="C:\Users\justine.mae.macario\cloud-disaster-telecom-decision-intelligence\backend\disastertelecom" />
       <recent name="C:\Users\justine.mae.macario\cloud-disaster-telecom-decision-intelligence\backend\disastertelecom\src" />
+      <recent name="C:\Users\justine.mae.macario\cloud-disaster-telecom-decision-intelligence\backend\disastertelecom" />
+      <recent name="C:\Users\justine.mae.macario\cloud-disaster-telecom-decision-intelligence\data\schemas" />
       <recent name="C:\Users\justine.mae.macario\cloud-disaster-telecom-decision-intelligence\backend" />
       <recent name="C:\Users\justine.mae.macario\cloud-disaster-telecom-decision-intelligence\backend\disastertelecom\src\main\java\com\accen\disastertelecom\service" />
     </key>
