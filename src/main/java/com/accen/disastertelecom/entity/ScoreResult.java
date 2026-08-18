@@ -1,5 +1,6 @@
 package com.accen.disastertelecom.entity;
 
+import lombok.Builder;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;

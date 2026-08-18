@@ -86,42 +86,42 @@ public class DataInitializer implements CommandLineRunner {
 
         // 2. Seed Operational Site Statuses
         List<SiteStatus> statuses = List.of(
-                SiteStatus.builder().site(sites.get(0)).powerStatus("down").backhaulStatus("online").physicalDamage("none").currentStatus("down").affectedUsersEst(3500).build(),
-                SiteStatus.builder().site(sites.get(1)).powerStatus("online").backhaulStatus("online").physicalDamage("none").currentStatus("up").affectedUsersEst(0).build(),
-                SiteStatus.builder().site(sites.get(2)).powerStatus("down").backhaulStatus("cut").physicalDamage("major").currentStatus("down").affectedUsersEst(1200).build(),
-                SiteStatus.builder().site(sites.get(3)).powerStatus("online").backhaulStatus("online").physicalDamage("none").currentStatus("up").affectedUsersEst(0).build(),
-                SiteStatus.builder().site(sites.get(4)).powerStatus("unstable").backhaulStatus("degraded").physicalDamage("minor").currentStatus("degraded").affectedUsersEst(2100).build(),
-                SiteStatus.builder().site(sites.get(5)).powerStatus("down").backhaulStatus("online").physicalDamage("none").currentStatus("down").affectedUsersEst(800).build(),
-                SiteStatus.builder().site(sites.get(6)).powerStatus("down").backhaulStatus("cut").physicalDamage("major").currentStatus("down").affectedUsersEst(4100).build(),
-                SiteStatus.builder().site(sites.get(7)).powerStatus("online").backhaulStatus("online").physicalDamage("none").currentStatus("up").affectedUsersEst(0).build(),
-                SiteStatus.builder().site(sites.get(8)).powerStatus("unstable").backhaulStatus("online").physicalDamage("none").currentStatus("degraded").affectedUsersEst(1500).build(),
-                SiteStatus.builder().site(sites.get(9)).powerStatus("online").backhaulStatus("online").physicalDamage("none").currentStatus("up").affectedUsersEst(0).build(),
-                SiteStatus.builder().site(sites.get(10)).powerStatus("down").backhaulStatus("cut").physicalDamage("minor").currentStatus("down").affectedUsersEst(2900).build(),
-                SiteStatus.builder().site(sites.get(11)).powerStatus("online").backhaulStatus("online").physicalDamage("none").currentStatus("up").affectedUsersEst(0).build(),
-                SiteStatus.builder().site(sites.get(12)).powerStatus("down").backhaulStatus("online").physicalDamage("none").currentStatus("down").affectedUsersEst(1800).build(),
-                SiteStatus.builder().site(sites.get(13)).powerStatus("online").backhaulStatus("online").physicalDamage("none").currentStatus("up").affectedUsersEst(0).build(),
-                SiteStatus.builder().site(sites.get(14)).powerStatus("down").backhaulStatus("online").physicalDamage("minor").currentStatus("down").affectedUsersEst(3200).build()
+                SiteStatus.builder().siteId(sites.get(0).getSiteId()).powerStatus("down").backhaulStatus("online").physicalDamage("none").currentStatus("down").affectedUsersEst(3500).build(),
+                SiteStatus.builder().siteId(sites.get(1).getSiteId()).powerStatus("online").backhaulStatus("online").physicalDamage("none").currentStatus("up").affectedUsersEst(0).build(),
+                SiteStatus.builder().siteId(sites.get(2).getSiteId()).powerStatus("down").backhaulStatus("cut").physicalDamage("major").currentStatus("down").affectedUsersEst(1200).build(),
+                SiteStatus.builder().siteId(sites.get(3).getSiteId()).powerStatus("online").backhaulStatus("online").physicalDamage("none").currentStatus("up").affectedUsersEst(0).build(),
+                SiteStatus.builder().siteId(sites.get(4).getSiteId()).powerStatus("unstable").backhaulStatus("degraded").physicalDamage("minor").currentStatus("degraded").affectedUsersEst(2100).build(),
+                SiteStatus.builder().siteId(sites.get(5).getSiteId()).powerStatus("down").backhaulStatus("online").physicalDamage("none").currentStatus("down").affectedUsersEst(800).build(),
+                SiteStatus.builder().siteId(sites.get(6).getSiteId()).powerStatus("down").backhaulStatus("cut").physicalDamage("major").currentStatus("down").affectedUsersEst(4100).build(),
+                SiteStatus.builder().siteId(sites.get(7).getSiteId()).powerStatus("online").backhaulStatus("online").physicalDamage("none").currentStatus("up").affectedUsersEst(0).build(),
+                SiteStatus.builder().siteId(sites.get(8).getSiteId()).powerStatus("unstable").backhaulStatus("online").physicalDamage("none").currentStatus("degraded").affectedUsersEst(1500).build(),
+                SiteStatus.builder().siteId(sites.get(9).getSiteId()).powerStatus("online").backhaulStatus("online").physicalDamage("none").currentStatus("up").affectedUsersEst(0).build(),
+                SiteStatus.builder().siteId(sites.get(10).getSiteId()).powerStatus("down").backhaulStatus("cut").physicalDamage("minor").currentStatus("down").affectedUsersEst(2900).build(),
+                SiteStatus.builder().siteId(sites.get(11).getSiteId()).powerStatus("online").backhaulStatus("online").physicalDamage("none").currentStatus("up").affectedUsersEst(0).build(),
+                SiteStatus.builder().siteId(sites.get(12).getSiteId()).powerStatus("down").backhaulStatus("online").physicalDamage("none").currentStatus("down").affectedUsersEst(1800).build(),
+                SiteStatus.builder().siteId(sites.get(13).getSiteId()).powerStatus("online").backhaulStatus("online").physicalDamage("none").currentStatus("up").affectedUsersEst(0).build(),
+                SiteStatus.builder().siteId(sites.get(14).getSiteId()).powerStatus("down").backhaulStatus("online").physicalDamage("minor").currentStatus("down").affectedUsersEst(3200).build()
         );
         siteStatusRepository.saveAll(statuses);
 
         // 3. Seed Score Results
         OffsetDateTime timestamp = OffsetDateTime.now();
         List<ScoreResult> scores = List.of(
-                ScoreResult.builder().site(sites.get(0)).riskScore(88.5).priorityScore(92.0).rootCause("Power Loss").fallbackStatus("Satellite Fallback Active").severity("CRITICAL").processedAt(timestamp).build(),
-                ScoreResult.builder().site(sites.get(1)).riskScore(20.0).priorityScore(15.0).rootCause("Operational").fallbackStatus("Primary Link Operational").severity("LOW").processedAt(timestamp).build(),
-                ScoreResult.builder().site(sites.get(2)).riskScore(95.0).priorityScore(89.5).rootCause("Physical Damage").fallbackStatus("Emergency Radio Link").severity("CRITICAL").processedAt(timestamp).build(),
-                ScoreResult.builder().site(sites.get(3)).riskScore(15.0).priorityScore(10.0).rootCause("Operational").fallbackStatus("Primary Link Operational").severity("LOW").processedAt(timestamp).build(),
-                ScoreResult.builder().site(sites.get(4)).riskScore(65.0).priorityScore(71.0).rootCause("Network Congestion").fallbackStatus("Satellite Fallback Active").severity("HIGH").processedAt(timestamp).build(),
-                ScoreResult.builder().site(sites.get(5)).riskScore(50.0).priorityScore(45.0).rootCause("Power Loss").fallbackStatus("No Fallback Available").severity("MEDIUM").processedAt(timestamp).build(),
-                ScoreResult.builder().site(sites.get(6)).riskScore(92.0).priorityScore(96.5).rootCause("Fiber/Backhaul Cut").fallbackStatus("Satellite Fallback Active").severity("CRITICAL").processedAt(timestamp).build(),
-                ScoreResult.builder().site(sites.get(7)).riskScore(18.0).priorityScore(12.0).rootCause("Operational").fallbackStatus("Primary Link Operational").severity("LOW").processedAt(timestamp).build(),
-                ScoreResult.builder().site(sites.get(8)).riskScore(55.0).priorityScore(58.0).rootCause("Power Loss").fallbackStatus("Free Wi-Fi Operational").severity("MEDIUM").processedAt(timestamp).build(),
-                ScoreResult.builder().site(sites.get(9)).riskScore(22.0).priorityScore(18.0).rootCause("Operational").fallbackStatus("Primary Link Operational").severity("LOW").processedAt(timestamp).build(),
-                ScoreResult.builder().site(sites.get(10)).riskScore(78.0).priorityScore(81.0).rootCause("Fiber/Backhaul Cut").fallbackStatus("No Fallback Available").severity("HIGH").processedAt(timestamp).build(),
-                ScoreResult.builder().site(sites.get(11)).riskScore(12.0).priorityScore(10.0).rootCause("Operational").fallbackStatus("Primary Link Operational").severity("LOW").processedAt(timestamp).build(),
-                ScoreResult.builder().site(sites.get(12)).riskScore(62.0).priorityScore(64.0).rootCause("Power Loss").fallbackStatus("Free Wi-Fi Operational").severity("MEDIUM").processedAt(timestamp).build(),
-                ScoreResult.builder().site(sites.get(13)).riskScore(25.0).priorityScore(20.0).rootCause("Operational").fallbackStatus("Primary Link Operational").severity("LOW").processedAt(timestamp).build(),
-                ScoreResult.builder().site(sites.get(14)).riskScore(89.0).priorityScore(94.0).rootCause("Power Loss").fallbackStatus("Satellite Fallback Active").severity("CRITICAL").processedAt(timestamp).build()
+                ScoreResult.builder().siteId(sites.get(0).getSiteId()).riskScore(88.5).priorityScore(92.0).rootCause("Power Loss").fallbackStatus("Satellite Fallback Active").severity("CRITICAL").processedAt(timestamp).build(),
+                ScoreResult.builder().siteId(sites.get(1).getSiteId()).riskScore(20.0).priorityScore(15.0).rootCause("Operational").fallbackStatus("Primary Link Operational").severity("LOW").processedAt(timestamp).build(),
+                ScoreResult.builder().siteId(sites.get(2).getSiteId()).riskScore(95.0).priorityScore(89.5).rootCause("Physical Damage").fallbackStatus("Emergency Radio Link").severity("CRITICAL").processedAt(timestamp).build(),
+                ScoreResult.builder().siteId(sites.get(3).getSiteId()).riskScore(15.0).priorityScore(10.0).rootCause("Operational").fallbackStatus("Primary Link Operational").severity("LOW").processedAt(timestamp).build(),
+                ScoreResult.builder().siteId(sites.get(4).getSiteId()).riskScore(65.0).priorityScore(71.0).rootCause("Network Congestion").fallbackStatus("Satellite Fallback Active").severity("HIGH").processedAt(timestamp).build(),
+                ScoreResult.builder().siteId(sites.get(5).getSiteId()).riskScore(50.0).priorityScore(45.0).rootCause("Power Loss").fallbackStatus("No Fallback Available").severity("MEDIUM").processedAt(timestamp).build(),
+                ScoreResult.builder().siteId(sites.get(6).getSiteId()).riskScore(92.0).priorityScore(96.5).rootCause("Fiber/Backhaul Cut").fallbackStatus("Satellite Fallback Active").severity("CRITICAL").processedAt(timestamp).build(),
+                ScoreResult.builder().siteId(sites.get(7).getSiteId()).riskScore(18.0).priorityScore(12.0).rootCause("Operational").fallbackStatus("Primary Link Operational").severity("LOW").processedAt(timestamp).build(),
+                ScoreResult.builder().siteId(sites.get(8).getSiteId()).riskScore(55.0).priorityScore(58.0).rootCause("Power Loss").fallbackStatus("Free Wi-Fi Operational").severity("MEDIUM").processedAt(timestamp).build(),
+                ScoreResult.builder().siteId(sites.get(9).getSiteId()).riskScore(22.0).priorityScore(18.0).rootCause("Operational").fallbackStatus("Primary Link Operational").severity("LOW").processedAt(timestamp).build(),
+                ScoreResult.builder().siteId(sites.get(10).getSiteId()).riskScore(78.0).priorityScore(81.0).rootCause("Fiber/Backhaul Cut").fallbackStatus("No Fallback Available").severity("HIGH").processedAt(timestamp).build(),
+                ScoreResult.builder().siteId(sites.get(11).getSiteId()).riskScore(12.0).priorityScore(10.0).rootCause("Operational").fallbackStatus("Primary Link Operational").severity("LOW").processedAt(timestamp).build(),
+                ScoreResult.builder().siteId(sites.get(12).getSiteId()).riskScore(62.0).priorityScore(64.0).rootCause("Power Loss").fallbackStatus("Free Wi-Fi Operational").severity("MEDIUM").processedAt(timestamp).build(),
+                ScoreResult.builder().siteId(sites.get(13).getSiteId()).riskScore(25.0).priorityScore(20.0).rootCause("Operational").fallbackStatus("Primary Link Operational").severity("LOW").processedAt(timestamp).build(),
+                ScoreResult.builder().siteId(sites.get(14).getSiteId()).riskScore(89.0).priorityScore(94.0).rootCause("Power Loss").fallbackStatus("Satellite Fallback Active").severity("CRITICAL").processedAt(timestamp).build()
         );
         scoreResultRepository.saveAll(scores);
     }
