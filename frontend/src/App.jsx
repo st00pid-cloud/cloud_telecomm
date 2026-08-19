@@ -210,11 +210,6 @@ const mobileNavItems = navItems.filter((item) =>
 
 const pageDetails = {
     '/about': {
-        title: 'About KONEK',
-        subtitle:
-            'Learn about the mission, purpose, and goals of the KONEK platform.',
-        status: 'Information',
-        statusColor: 'info',
     },
     '/drrm': {
         title: 'DRRM Operations Center',
@@ -427,24 +422,6 @@ function TopBar() {
                     <Typography variant="h6">KONEK</Typography>
                 </Box>
 
-                <Box sx={{ display: { xs: 'none', md: 'flex' }, alignItems: 'center', gap: 1 }}>
-                    <Chip
-                        size="small"
-                        label="Production Preview"
-                        color="primary"
-                        variant="outlined"
-                    />
-
-                    <Chip
-                        size="small"
-                        label="Philippines DRRM Context"
-                        sx={{
-                            bgcolor: '#f8fafc',
-                            border: '1px solid #e5eaf2',
-                        }}
-                    />
-                </Box>
-
                 <Box sx={{ flexGrow: 1 }} />
 
                 <Box
@@ -489,59 +466,50 @@ function TopBar() {
     );
 }
 
-function StatusBanner() {
-    return (
-        <Paper
-            sx={{
-                p: 2,
-                mb: 3,
-                borderRadius: 3,
-                bgcolor: '#fff7ed',
-                border: '1px solid #fed7aa',
-                display: 'flex',
-                alignItems: { xs: 'flex-start', sm: 'center' },
-                flexDirection: { xs: 'column', sm: 'row' },
-                gap: 1.5,
-            }}
-        >
-            <Box
-                sx={{
-                    width: 38,
-                    height: 38,
-                    borderRadius: 2,
-                    bgcolor: '#ffedd5',
-                    color: '#c2410c',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    flexShrink: 0,
-                }}
-            >
-                <WarningAmberIcon />
-            </Box>
-
-            <Box sx={{ flexGrow: 1 }}>
-                <Typography variant="body1" fontWeight={750}>
-                    Disaster operations monitoring enabled
-                </Typography>
-
-                <Typography variant="body2" color="text.secondary">
-                    Use this workspace to monitor outage risk, restoration status, and regional telecom service continuity.
-                </Typography>
-            </Box>
-
-            <Chip
-                label="Monitoring"
-                size="small"
-                sx={{
-                    bgcolor: '#ffedd5',
-                    color: '#9a3412',
-                    fontWeight: 700,
-                }}
-            />
-        </Paper>
-    );
-}
+// function StatusBanner() {
+//     return (
+//         <Paper
+//             sx={{
+//                 p: 2,
+//                 mb: 3,
+//                 borderRadius: 3,
+//                 bgcolor: '#fff7ed',
+//                 border: '1px solid #fed7aa',
+//                 display: 'flex',
+//                 alignItems: { xs: 'flex-start', sm: 'center' },
+//                 flexDirection: { xs: 'column', sm: 'row' },
+//                 gap: 1.5,
+//             }}
+//         >
+//         {/*    <Box*/}
+//         {/*        sx={{*/}
+//         {/*            width: 38,*/}
+//         {/*            height: 38,*/}
+//         {/*            borderRadius: 2,*/}
+//         {/*            bgcolor: '#ffedd5',*/}
+//         {/*            color: '#c2410c',*/}
+//         {/*            display: 'flex',*/}
+//         {/*            alignItems: 'center',*/}
+//         {/*            justifyContent: 'center',*/}
+//         {/*            flexShrink: 0,*/}
+//         {/*        }}*/}
+//         {/*    >*/}
+//         {/*        <WarningAmberIcon />*/}
+//         {/*    </Box>*/}
+//
+//
+//         {/*    /!*<Chip*!/*/}
+//         {/*    /!*    label="Monitoring"*!/*/}
+//         {/*    /!*    size="small"*!/*/}
+//         {/*    /!*    sx={{*!/*/}
+//         {/*    /!*        bgcolor: '#ffedd5',*!/*/}
+//         {/*    /!*        color: '#9a3412',*!/*/}
+//         {/*    /!*        fontWeight: 700,*!/*/}
+//         {/*    /!*    }}*!/*/}
+//         {/*    /!*/>*!/*/}
+//         {/*</Paper>*/}
+//     {/*);*/}
+// }
 
 function PageHeader() {
     const location = useLocation();
@@ -694,7 +662,7 @@ function AppShell() {
                 >
                     <PageHeader />
 
-                    {!hideStatusBanner && <StatusBanner />}
+                    {/*{!hideStatusBanner && <StatusBanner />}*/}
 
                     <Box
                         sx={{

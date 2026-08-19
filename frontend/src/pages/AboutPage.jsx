@@ -8,7 +8,6 @@ import {
     Avatar,
     Divider,
 } from '@mui/material';
-
 import SignalCellularAltIcon from '@mui/icons-material/SignalCellularAlt';
 import SecurityIcon from '@mui/icons-material/Security';
 import InsightsIcon from '@mui/icons-material/Insights';
@@ -18,300 +17,319 @@ import GroupsIcon from '@mui/icons-material/Groups';
 export default function AboutPage() {
     const teamMembers = [
         {
-            name: 'Member 1',
-            role: 'Project Manager / Scrum Lead',
+            name: 'Justine Mae Macario',
+            role: 'Project Manager / Developer',
         },
         {
-            name: 'Member 2',
-            role: 'Cloud Engineer / Infrastructure Lead',
+            name: 'Raja Rane Mandapat',
+            role: 'Developer',
         },
         {
-            name: 'Member 3',
-            role: 'Backend Developer',
+            name: 'Celes Castro',
+            role: 'Developer',
         },
         {
-            name: 'Member 4',
-            role: 'Frontend Developer',
+            name: 'Member',
+            role: 'Role',
         },
         {
-            name: 'Member 5',
-            role: 'Data & Analytics Specialist',
+            name: 'Member',
+            role: 'Role',
+        },
+        {
+            name: 'Member',
+            role: 'Role',
+        },
+        {
+            name: 'Member',
+            role: 'Role',
         },
     ];
 
+    const features = [
+        {
+            icon: SecurityIcon,
+            title: 'Disaster Resilience',
+            text: 'Monitor telecom infrastructure and identify high-risk areas affected by hazards.',
+        },
+        {
+            icon: InsightsIcon,
+            title: 'Decision Intelligence',
+            text: 'Transform data into insights for resource allocation and restoration priority.',
+        },
+        {
+            icon: CloudQueueIcon,
+            title: 'Cloud-Native Platform',
+            text: 'Scalable analytics and secure access built on modern cloud technologies.',
+        },
+    ];
+
+    const visionTags = [
+        'Disaster Response',
+        'Telecom Analytics',
+        'Cloud Platform',
+        'Decision Intelligence',
+    ];
+
     return (
-        <Box>
+        <Box
+            sx={{
+                height: '100vh',
+                width: '100%',
+                overflow: 'hidden',
+                boxSizing: 'border-box',
+                p: { xs: 1.5, md: 2.5 },
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 1.0,
+            }}
+        >
+            {/* Hero — fixed height */}
             <Paper
                 sx={{
-                    p: 5,
-                    mb: 4,
-                    borderRadius: 4,
-                    background:
-                        'linear-gradient(135deg, #1a73e8 0%, #1558b0 100%)',
+                    p: { xs: 2, md: 2.5 },
+                    borderRadius: 1,
+                    flexShrink: 0,
+                    background: 'linear-gradient(135deg, #1a73e8 0%, #1558b0 100%)',
                     color: 'white',
                 }}
             >
-                <Box
-                    sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 2,
-                        mb: 2,
-                    }}
-                >
-                    <SignalCellularAltIcon sx={{ fontSize: 42 }} />
-
+                <Box sx={{ display: 'flex', alignItems: 'center', gap: 1.5 }}>
+                    <SignalCellularAltIcon sx={{ fontSize: { xs: 28, md: 34 } }} />
                     <Box>
-                        <Typography variant="h3" fontWeight={800}>
+                        <Typography
+                            sx={{
+                                fontSize: 'clamp(1.3rem, 2.2vw, 1.8rem)',
+                                fontWeight: 800,
+                                lineHeight: 1.1,
+                            }}
+                        >
                             KONEK
                         </Typography>
-
-                        <Typography variant="h6" sx={{ opacity: 0.9 }}>
+                        <Typography
+                            sx={{
+                                fontSize: 'clamp(0.75rem, 1.1vw, 0.95rem)',
+                                opacity: 0.9,
+                            }}
+                        >
                             Cloud Telecom Decision Intelligence Platform
                         </Typography>
                     </Box>
                 </Box>
-
                 <Typography
-                    variant="body1"
                     sx={{
-                        maxWidth: 900,
-                        mt: 3,
-                        lineHeight: 1.8,
+                        fontSize: 'clamp(0.72rem, 1vw, 0.85rem)',
+                        mt: 1,
+                        lineHeight: 1.5,
+                        display: '-webkit-box',
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: 'vertical',
+                        overflow: 'hidden',
                     }}
                 >
-                    KONEK is an integrated cloud-based decision intelligence platform
-                    designed to enhance telecommunications resilience during disasters.
-                    The platform provides real-time monitoring, outage visibility,
-                    risk assessment, and actionable insights to support disaster
-                    response agencies, telecommunications engineers, and organizational
-                    decision-makers.
+                    KONEK enhances telecom resilience during disasters with real-time monitoring,
+                    outage visibility, risk assessment, and actionable insights for responders and engineers.
                 </Typography>
             </Paper>
 
-            <Grid container spacing={3}>
-                <Grid item xs={12} md={4}>
-                    <Paper
-                        sx={{
-                            p: 3,
-                            height: '100%',
-                            borderRadius: 4,
-                        }}
-                    >
-                        <SecurityIcon
-                            sx={{
-                                fontSize: 40,
-                                color: '#1a73e8',
-                                mb: 2,
-                            }}
-                        />
-
-                        <Typography variant="h6" fontWeight={700} gutterBottom>
-                            Disaster Resilience
-                        </Typography>
-
-                        <Typography color="text.secondary">
-                            Monitor critical telecom infrastructure and identify
-                            high-risk areas affected by typhoons, floods,
-                            earthquakes, and other hazard events.
-                        </Typography>
-                    </Paper>
-                </Grid>
-
-                <Grid item xs={12} md={4}>
-                    <Paper
-                        sx={{
-                            p: 3,
-                            height: '100%',
-                            borderRadius: 4,
-                        }}
-                    >
-                        <InsightsIcon
-                            sx={{
-                                fontSize: 40,
-                                color: '#1a73e8',
-                                mb: 2,
-                            }}
-                        />
-
-                        <Typography variant="h6" fontWeight={700} gutterBottom>
-                            Decision Intelligence
-                        </Typography>
-
-                        <Typography color="text.secondary">
-                            Transform operational and disaster data into meaningful
-                            insights that support resource allocation, restoration
-                            prioritization, and strategic planning.
-                        </Typography>
-                    </Paper>
-                </Grid>
-
-                <Grid item xs={12} md={4}>
-                    <Paper
-                        sx={{
-                            p: 3,
-                            height: '100%',
-                            borderRadius: 4,
-                        }}
-                    >
-                        <CloudQueueIcon
-                            sx={{
-                                fontSize: 40,
-                                color: '#1a73e8',
-                                mb: 2,
-                            }}
-                        />
-
-                        <Typography variant="h6" fontWeight={700} gutterBottom>
-                            Cloud-Native Platform
-                        </Typography>
-
-                        <Typography color="text.secondary">
-                            Built using modern cloud technologies to provide
-                            scalable analytics, centralized monitoring,
-                            and secure access across multiple stakeholders.
-                        </Typography>
-                    </Paper>
-                </Grid>
-            </Grid>
-
-            <Paper
+            {/* Main content — fills remaining space, split into two columns */}
+            <Box
                 sx={{
-                    p: 4,
-                    mt: 4,
-                    borderRadius: 4,
+                    flex: 1,
+                    minHeight: 0,
+                    display: 'grid',
+                    gridTemplateColumns: { xs: '1fr', md: '1.1fr 0.9fr' },
+                    gap: 1.5,
                 }}
             >
-                <Typography
-                    variant="h5"
-                    fontWeight={700}
-                    gutterBottom
-                >
-                    Project Vision
-                </Typography>
-
-                <Typography
-                    color="text.secondary"
-                    sx={{
-                        lineHeight: 1.9,
-                    }}
-                >
-                    Telecommunications infrastructure plays a critical role
-                    during disaster response and recovery operations. KONEK
-                    aims to provide a unified operational picture that helps
-                    stakeholders rapidly identify outages, assess regional
-                    impacts, prioritize restoration activities, and improve
-                    communication continuity in affected communities.
-                </Typography>
-
-                <Box sx={{ mt: 3 }}>
-                    <Chip
-                        label="Disaster Response"
-                        color="primary"
-                        sx={{ mr: 1, mb: 1 }}
-                    />
-
-                    <Chip
-                        label="Telecom Analytics"
-                        color="primary"
-                        sx={{ mr: 1, mb: 1 }}
-                    />
-
-                    <Chip
-                        label="Cloud Platform"
-                        color="primary"
-                        sx={{ mr: 1, mb: 1 }}
-                    />
-
-                    <Chip
-                        label="Decision Intelligence"
-                        color="primary"
-                        sx={{ mr: 1, mb: 1 }}
-                    />
-                </Box>
-            </Paper>
-
-            <Paper
-                sx={{
-                    p: 4,
-                    mt: 4,
-                    borderRadius: 4,
-                }}
-            >
-                <Box
-                    sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 1,
-                        mb: 3,
-                    }}
-                >
-                    <GroupsIcon color="primary" />
-
-                    <Typography variant="h5" fontWeight={700}>
-                        Development Team
-                    </Typography>
-                </Box>
-
-                <Divider sx={{ mb: 3 }} />
-
-                <Grid container spacing={3}>
-                    {teamMembers.map((member) => (
-                        <Grid
-                            item
-                            xs={12}
-                            sm={6}
-                            md={4}
-                            key={member.name}
-                        >
+                {/* Left: Features + Vision stacked */}
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5, minHeight: 0 }}>
+                    {/* Feature cards row */}
+                    <Box
+                        sx={{
+                            flex: 1,
+                            minHeight: 0,
+                            display: 'grid',
+                            gridTemplateColumns: 'repeat(3, 1fr)',
+                            gap: 1.0,
+                        }}
+                    >
+                        {features.map(({ icon: Icon, title, text }) => (
                             <Paper
+                                key={title}
+                                sx={{
+                                    p: 1.5,
+                                    borderRadius: 1,
+                                    minHeight: 0,
+                                    overflow: 'hidden',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                }}
+                            >
+                                <Icon sx={{ fontSize: { xs: 24, md: 28 }, color: '#1a73e8', mb: 0.5 }} />
+                                <Typography
+                                    sx={{
+                                        fontSize: 'clamp(0.75rem, 1vw, 0.9rem)',
+                                        fontWeight: 700,
+                                        mb: 0.5,
+                                    }}
+                                >
+                                    {title}
+                                </Typography>
+                                <Typography
+                                    color="text.secondary"
+                                    sx={{
+                                        fontSize: 'clamp(0.65rem, 0.85vw, 0.78rem)',
+                                        lineHeight: 1.4,
+                                        display: '-webkit-box',
+                                        WebkitLineClamp: 3,
+                                        WebkitBoxOrient: 'vertical',
+                                        overflow: 'hidden',
+                                    }}
+                                >
+                                    {text}
+                                </Typography>
+                            </Paper>
+                        ))}
+                    </Box>
+
+                    {/* Vision */}
+                    <Paper
+                        sx={{
+                            p: 1.5,
+                            borderRadius: 1,
+                            flex: 1,
+                            minHeight: 0,
+                            overflow: 'hidden',
+                            display: 'flex',
+                            flexDirection: 'column',
+                        }}
+                    >
+                        <Typography
+                            sx={{
+                                fontSize: 'clamp(0.85rem, 1.2vw, 1.05rem)',
+                                fontWeight: 700,
+                                mb: 0.5,
+                            }}
+                        >
+                            Project Vision
+                        </Typography>
+                        <Typography
+                            color="text.secondary"
+                            sx={{
+                                fontSize: 'clamp(0.68rem, 0.9vw, 0.8rem)',
+                                lineHeight: 1.5,
+                                display: '-webkit-box',
+                                WebkitLineClamp: 2,
+                                WebkitBoxOrient: 'vertical',
+                                overflow: 'hidden',
+                            }}
+                        >
+                            KONEK provides a unified operational picture that helps stakeholders rapidly
+                            identify outages, assess impacts, prioritize restoration, and improve continuity.
+                        </Typography>
+                        <Box sx={{ mt: 'auto', pt: 0.5 }}>
+                            {visionTags.map((label) => (
+                                <Chip
+                                    key={label}
+                                    label={label}
+                                    color="primary"
+                                    size="small"
+                                    sx={{ mr: 0.5, mb: 0.5, fontSize: '0.65rem' }}
+                                />
+                            ))}
+                        </Box>
+                    </Paper>
+                </Box>
+
+                {/* Right: Development Team */}
+                <Paper
+                    sx={{
+                        p: 1.5,
+                        borderRadius: 1,
+                        minHeight: 0,
+                        overflow: 'hidden',
+                        display: 'flex',
+                        flexDirection: 'column',
+                    }}
+                >
+                    <Box sx={{ display: 'flex', alignItems: 'center', gap: 1, mb: 1 }}>
+                        <GroupsIcon color="primary" fontSize="small" />
+                        <Typography
+                            sx={{
+                                fontSize: 'clamp(0.85rem, 1.2vw, 1.05rem)',
+                                fontWeight: 700,
+                            }}
+                        >
+                            Development Team
+                        </Typography>
+                    </Box>
+                    <Divider sx={{ mb: 1 }} />
+                    <Box
+                        sx={{
+                            flex: 1,
+                            minHeight: 0,
+                            display: 'grid',
+                            gridTemplateColumns: '1fr 1fr',
+                            gap: 1,
+                            alignContent: 'start',
+                        }}
+                    >
+                        {teamMembers.map((member) => (
+                            <Paper
+                                key={member.name}
                                 variant="outlined"
                                 sx={{
-                                    p: 2.5,
-                                    borderRadius: 3,
+                                    p: 1,
+                                    borderRadius: 1,
                                     textAlign: 'center',
+                                    display: 'flex',
+                                    flexDirection: 'column',
+                                    alignItems: 'center',
                                 }}
                             >
                                 <Avatar
                                     sx={{
-                                        width: 64,
-                                        height: 64,
-                                        mx: 'auto',
-                                        mb: 2,
+                                        width: 36,
+                                        height: 36,
+                                        mb: 0.5,
                                         bgcolor: '#1a73e8',
+                                        fontSize: '0.85rem',
                                         fontWeight: 700,
                                     }}
                                 >
                                     {member.name.charAt(0)}
                                 </Avatar>
-
                                 <Typography
-                                    variant="subtitle1"
-                                    fontWeight={700}
+                                    sx={{
+                                        fontSize: 'clamp(0.65rem, 0.85vw, 0.78rem)',
+                                        fontWeight: 700,
+                                        lineHeight: 1.2,
+                                    }}
                                 >
                                     {member.name}
                                 </Typography>
-
                                 <Typography
-                                    variant="body2"
                                     color="text.secondary"
+                                    sx={{
+                                        fontSize: 'clamp(0.58rem, 0.75vw, 0.68rem)',
+                                        lineHeight: 1.2,
+                                    }}
                                 >
                                     {member.role}
                                 </Typography>
                             </Paper>
-                        </Grid>
-                    ))}
-                </Grid>
-            </Paper>
+                        ))}
+                    </Box>
+                </Paper>
+            </Box>
 
+            {/* Footer — fixed, tiny */}
             <Typography
-                variant="body2"
+                variant="caption"
                 color="text.secondary"
                 align="center"
-                sx={{
-                    mt: 4,
-                    mb: 2,
-                }}
+                sx={{ flexShrink: 0 }}
             >
                 KONEK • Cloud Telecom Decision Intelligence Platform
             </Typography>
