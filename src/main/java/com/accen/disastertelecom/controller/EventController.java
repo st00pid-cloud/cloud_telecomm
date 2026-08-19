@@ -1,4 +1,4 @@
-﻿package com.accen.disastertelecom.controller;
+package com.accen.disastertelecom.controller;
 
 import com.accen.disastertelecom.entity.DisasterEvent;
 import com.accen.disastertelecom.repository.DisasterEventRepository;
