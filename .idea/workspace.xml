@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f5b04a4-dc0f-4ada-8337-84262b58296d" name="Changes" comment="Start of hour 6">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/disastertelecom" beforeDir="false" afterPath="$PROJECT_DIR$/backend/disastertelecom" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/target/classes/com/accen/disastertelecom/config/GeminiConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/target/classes/com/accen/disastertelecom/controller/AdvisorController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/target/classes/com/accen/disastertelecom/dto/AdvisorRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/target/classes/com/accen/disastertelecom/dto/AdvisorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/target/classes/com/accen/disastertelecom/service/AdvisorService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/target/classes/com/accen/disastertelecom/service/impl/AdvisorServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/components/AdvisorPanel.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/frontend/src/services/advisorService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/disastertelecom/README.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
