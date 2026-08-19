@@ -1,31 +1,8 @@
 ﻿import React from 'react';
-import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
-    Link,
-    useLocation,
+import {BrowserRouter as Router, Routes, Route, Link, useLocation,
 } from 'react-router-dom';
 
-import {
-    ThemeProvider,
-    createTheme,
-    CssBaseline,
-    Box,
-    Typography,
-    Container,
-    AppBar,
-    Toolbar,
-    Drawer,
-    List,
-    ListItemButton,
-    ListItemIcon,
-    ListItemText,
-    Chip,
-    Avatar,
-    IconButton,
-    Divider,
-    Paper,
+import {ThemeProvider, createTheme, CssBaseline, Box, Typography, Container, AppBar, Toolbar, Drawer, List, ListItemButton, ListItemIcon, ListItemText, Chip, Avatar, IconButton, Divider, Paper,
 } from '@mui/material';
 
 import ShieldIcon from '@mui/icons-material/Shield';
@@ -207,54 +184,6 @@ const navItems = navSections.flatMap((section) => section.items);
 const mobileNavItems = navItems.filter((item) =>
     ['/drrm', '/engineer', '/executive', '/live-mapping'].includes(item.path)
 );
-
-const pageDetails = {
-    '/about': {
-    },
-    '/drrm': {
-        title: 'DRRM Operations Center',
-        subtitle:
-            'Coordinate disaster response using telecom outage and risk intelligence.',
-        status: 'Active Monitoring',
-        statusColor: 'warning',
-    },
-    '/engineer': {
-        title: 'Network Engineering Center',
-        subtitle:
-            'Monitor telecom infrastructure health, tower status, and restoration progress.',
-        status: 'Live Telemetry',
-        statusColor: 'success',
-    },
-    '/executive': {
-        title: 'Executive Intelligence Center',
-        subtitle:
-            'Track service continuity, regional impact, and recovery performance.',
-        status: 'Decision View',
-        statusColor: 'primary',
-    },
-    '/live-mapping': {
-        title: 'Telecom Infrastructure Mapping',
-        subtitle:
-            'View telecom sites, outage locations, and regional infrastructure coverage.',
-        status: 'Map View',
-        statusColor: 'success',
-    },
-    '/group': {
-        title: 'Cloud Elite Telecommunications Group',
-        subtitle:
-            'Meet the researchers, developers, and contributors behind KONEK.',
-        status: 'Team',
-        statusColor: 'secondary',
-    },
-};
-
-function getPageDetails(pathname) {
-    if (pathname === '/') {
-        return pageDetails['/about'];
-    }
-
-    return pageDetails[pathname] || pageDetails['/about'];
-}
 
 function getCurrentPath(pathname) {
     if (pathname === '/') {
@@ -511,43 +440,6 @@ function TopBar() {
 //     {/*);*/}
 // }
 
-function PageHeader() {
-    const location = useLocation();
-    const details = getPageDetails(location.pathname);
-
-    return (
-        <Box
-            sx={{
-                mb: 3,
-                display: 'flex',
-                alignItems: { xs: 'flex-start', md: 'center' },
-                justifyContent: 'space-between',
-                gap: 2,
-                flexDirection: { xs: 'column', md: 'row' },
-            }}
-        >
-            <Box>
-                <Typography variant="h4" sx={{ mb: 0.5 }}>
-                    {details.title}
-                </Typography>
-
-                <Typography variant="body1" color="text.secondary">
-                    {details.subtitle}
-                </Typography>
-            </Box>
-
-            <Chip
-                label={details.status}
-                color={details.statusColor}
-                sx={{
-                    borderRadius: 2,
-                    px: 1,
-                    height: 34,
-                }}
-            />
-        </Box>
-    );
-}
 
 function MobileNav() {
     const location = useLocation();
@@ -660,7 +552,6 @@ function AppShell() {
                         px: { xs: 2, sm: 3, lg: 4 },
                     }}
                 >
-                    <PageHeader />
 
                     {/*{!hideStatusBanner && <StatusBanner />}*/}
 

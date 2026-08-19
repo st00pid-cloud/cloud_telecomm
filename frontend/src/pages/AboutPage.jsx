@@ -2,11 +2,11 @@ import React from 'react';
 import {
     Box,
     Typography,
-    Grid,
     Paper,
     Chip,
     Avatar,
     Divider,
+    Link,
 } from '@mui/material';
 import SignalCellularAltIcon from '@mui/icons-material/SignalCellularAlt';
 import SecurityIcon from '@mui/icons-material/Security';
@@ -19,30 +19,37 @@ export default function AboutPage() {
         {
             name: 'Justine Mae Macario',
             role: 'Project Manager / Developer',
+            linkedin: 'https://www.linkedin.com/in/justine-mae-macario',
         },
         {
             name: 'Raja Rane Mandapat',
             role: 'Developer',
+            linkedin: 'https://www.linkedin.com/in/raja-rane-mandapat',
         },
         {
             name: 'Celes Castro',
             role: 'Developer',
+            linkedin: 'https://www.linkedin.com/in/celes-castro',
         },
         {
             name: 'Member',
             role: 'Role',
+            linkedin: 'https://www.linkedin.com',
         },
         {
             name: 'Member',
             role: 'Role',
+            linkedin: 'https://www.linkedin.com',
         },
         {
             name: 'Member',
             role: 'Role',
+            linkedin: 'https://www.linkedin.com',
         },
         {
             name: 'Member',
             role: 'Role',
+            linkedin: 'https://www.linkedin.com',
         },
     ];
 
@@ -132,13 +139,13 @@ export default function AboutPage() {
                 </Typography>
             </Paper>
 
-            {/* Main content — fills remaining space, split into two columns */}
+            {/* Main content — expanded column width for Development Team */}
             <Box
                 sx={{
                     flex: 1,
                     minHeight: 0,
                     display: 'grid',
-                    gridTemplateColumns: { xs: '1fr', md: '1.1fr 0.9fr' },
+                    gridTemplateColumns: { xs: '1fr', md: '0.9fr 1.1fr' },
                     gap: 1.5,
                 }}
             >
@@ -269,15 +276,21 @@ export default function AboutPage() {
                         sx={{
                             flex: 1,
                             minHeight: 0,
+                            overflowY: 'auto',
                             display: 'grid',
                             gridTemplateColumns: '1fr 1fr',
                             gap: 1,
                             alignContent: 'start',
+                            pr: 0.5,
                         }}
                     >
-                        {teamMembers.map((member) => (
+                        {teamMembers.map((member, idx) => (
                             <Paper
-                                key={member.name}
+                                key={`${member.name}-${idx}`}
+                                component={Link}
+                                href={member.linkedin}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 variant="outlined"
                                 sx={{
                                     p: 1,
@@ -286,6 +299,14 @@ export default function AboutPage() {
                                     display: 'flex',
                                     flexDirection: 'column',
                                     alignItems: 'center',
+                                    textDecoration: 'none',
+                                    color: 'inherit',
+                                    transition: 'transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out',
+                                    '&:hover': {
+                                        transform: 'translateY(-2px)',
+                                        boxShadow: 2,
+                                        cursor: 'pointer',
+                                    },
                                 }}
                             >
                                 <Avatar
