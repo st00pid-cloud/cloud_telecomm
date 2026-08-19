@@ -1,88 +1,85 @@
 import React, { useState, useEffect } from 'react';
-import { Typography, Box, Paper, Grid, CircularProgress } from '@mui/material';
+import { Typography, Box, Paper, Grid, CircularProgress, Alert } from '@mui/material';
+import { getExecutiveDashboard } from '../api/telecomApi';
 
 export default function ExecutiveDashboard() {
-    const [events, setEvents] = useState([]);
-    const [sites, setSites] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-    useEffect(() => {
-        Promise.all([
-            fetch('/api/events').then(res => res.ok ? res.json() : Promise.reject('Failed to fetch events')),
-            fetch('/api/sites').then(res => res.ok ? res.json() : Promise.reject('Failed to fetch sites'))
-        ])
-        .then(([eventsData, sitesData]) => {
-            setEvents(eventsData);
-            setSites(sitesData);
-            setLoading(false);
-        })
-        .catch(err => {
-            setError(err);
-            setLoading(false);
-        });
-    }, []);
+  useEffect(() => {
+    getExecutiveDashboard()
+      .then(res => setData(res.data))
+      .catch(err => {
+        console.error(err);
+        setError('Could not load Executive dashboard. Is the backend running?');
+      })
+      .finally(() => setLoading(false));
+  }, []);
 
-    if (loading) {
-        return (
-            <Box display="flex" justifyContent="center" alignItems="center" minHeight="50vh">
-                <CircularProgress />
-            </Box>
-        );
-    }
+  if (loading) return <Box p={3}><CircularProgress /></Box>;
+  if (error) return <Box p={3}><Alert severity="error">{error}</Alert></Box>;
 
-    if (error) {
-        return (
-            <Box p={2}>
-                <Typography color="error">Error loading executive metrics: {error}</Typography>
-            </Box>
-        );
-    }
+  const status = data.highLevelAreaStatus || {};
 
-    const totalSites = sites.length;
-    const backupSites = sites.filter(s => s.backupAvailable).length;
-    const uptimePercentage = totalSites > 0 ? ((backupSites / totalSites) * 100).toFixed(1) : 100;
-    const activeOutages = events.filter(e => e.eventStatus === 'ACTIVE').length;
+  return (
+    <Box p={3}>
+      <Typography variant="h4" gutterBottom>LGU Executive View</Typography>
+      <Typography variant="subtitle1" color="text.secondary" gutterBottom>
+        {status['Region VI Status']}
+      </Typography>
 
-    return (
-        <Box p={2}>
-            <Box mb={4}>
-                <Typography variant="h3" fontWeight="bold" letterSpacing="-1px" gutterBottom>
-                    LGU Executive View
-                </Typography>
-                <Typography variant="subtitle1" color="text.secondary">
-                    High-level network resilience, active outages, and regional connectivity metrics.
-                </Typography>
-            </Box>
+      <Grid container spacing={3}>
+        <Grid item xs={12} md={4}>
+          <Paper sx={{ p: 2 }}>
+            <Typography variant="subtitle2" color="text.secondary">Total Affected Users KPI</Typography>
+            <Typography variant="h3" color="error" fontWeight="bold">
+              {data.totalAffectedUsers.toLocaleString()}
+            </Typography>
+          </Paper>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <Paper sx={{ p: 2 }}>
+            <Typography variant="subtitle2" color="text.secondary">Active Outages Summary</Typography>
+            <Typography variant="h3" color="warning.main" fontWeight="bold">
+              {data.activeOutagesCount}
+            </Typography>
+          </Paper>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <Paper sx={{ p: 2 }}>
+            <Typography variant="subtitle2" color="text.secondary">Regional Connectivity %</Typography>
+            <Typography variant="h3" color="success.main" fontWeight="bold">
+              {data.regionConnectivityPercentage}%
+            </Typography>
+          </Paper>
+        </Grid>
 
-            <Grid container spacing={4}>
-                {/* Total Affected Users / Infrastructure KPI */}
-                <Grid item xs={12} md={4}>
-                    <Paper sx={{ p: 3, height: '100%', minHeight: 200, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                        <Typography variant="body2" color="text.secondary" gutterBottom>Total Tracked Sites</Typography>
-                        <Typography variant="h3" fontWeight="bold" color="primary.main">{totalSites}</Typography>
-                        <Typography variant="caption" color="text.secondary" mt={1}>Monitored across regional nodes</Typography>
-                    </Paper>
-                </Grid>
-                
-                {/* Active Outages Summary */}
-                <Grid item xs={12} md={4}>
-                    <Paper sx={{ p: 3, height: '100%', minHeight: 200, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                        <Typography variant="body2" color="text.secondary" gutterBottom>Active Hazard Outages</Typography>
-                        <Typography variant="h3" fontWeight="bold" color="error.main">{activeOutages}</Typography>
-                        <Typography variant="caption" color="text.secondary" mt={1}>Active disaster events impacting sectors</Typography>
-                    </Paper>
-                </Grid>
-
-                {/* Regional Connectivity % */}
-                <Grid item xs={12} md={4}>
-                    <Paper sx={{ p: 3, height: '100%', minHeight: 200, display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                        <Typography variant="body2" color="text.secondary" gutterBottom>Network Survivability (Backup Ready)</Typography>
-                        <Typography variant="h3" fontWeight="bold" color="success.main">{uptimePercentage}%</Typography>
-                        <Typography variant="caption" color="text.secondary" mt={1}>{backupSites} of {totalSites} sites equipped with backup power</Typography>
-                    </Paper>
-                </Grid>
-            </Grid>
-        </Box>
-    );
+        <Grid item xs={12} md={4}>
+          <Paper sx={{ p: 2 }}>
+            <Typography variant="subtitle2" color="text.secondary">Active Disaster Alerts</Typography>
+            <Typography variant="h3" color="error" fontWeight="bold">
+              {status['Active Disaster Alerts'] ?? '—'}
+            </Typography>
+          </Paper>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <Paper sx={{ p: 2 }}>
+            <Typography variant="subtitle2" color="text.secondary">High-Vulnerability Sites</Typography>
+            <Typography variant="h3" color="warning.main" fontWeight="bold">
+              {status['High-Vulnerability Site Count'] ?? '—'}
+            </Typography>
+          </Paper>
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <Paper sx={{ p: 2 }}>
+            <Typography variant="subtitle2" color="text.secondary">Avg. Restoration Priority Index</Typography>
+            <Typography variant="h3" color="info.main" fontWeight="bold">
+              {status['Average Restoration Priority Index'] ?? '—'}
+            </Typography>
+          </Paper>
+        </Grid>
+      </Grid>
+    </Box>
+  );
 }

@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { ThemeProvider, createTheme, CssBaseline, Box, Button, Typography, Container } from '@mui/material';
 import ShieldIcon from '@mui/icons-material/Shield';
@@ -9,29 +9,31 @@ import DrrmDashboard from './pages/DrrmDashboard';
 import EngineerDashboard from './pages/EngineerDashboard';
 import ExecutiveDashboard from './pages/ExecutiveDashboard';
 
-// 1. Dark Theme
-const appleDarkTheme = createTheme({
+// 1. Light Theme with colored card panels (no white)
+const appleLightTheme = createTheme({
   palette: {
-    mode: 'dark',
+    mode: 'light',
     background: {
-      default: '#000000', // Deep absolute black
-      paper: 'rgba(28, 28, 30, 0.65)', // Translucent dark gray
+      default: '#dbe4ee', // page background, medium blue-gray
+      paper: '#c3d4e8',   // card panels, deeper blue-gray tint
     },
-    primary: { main: '#0a84ff' }, // Apple Blue
+    primary: { main: '#0a63d1' },
+    text: {
+      primary: '#132033',
+      secondary: '#48566b',
+    },
   },
   typography: {
     fontFamily: '-apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif',
   },
-  shape: { borderRadius: 16 }, // Squircle corners
+  shape: { borderRadius: 16 },
   components: {
     MuiPaper: {
       styleOverrides: {
         root: {
           backgroundImage: 'none',
-          backdropFilter: 'blur(30px)', // Frosted glass effect
-          WebkitBackdropFilter: 'blur(30px)',
-          border: '1px solid rgba(255, 255, 255, 0.1)',
-          boxShadow: '0 4px 30px rgba(0, 0, 0, 0.5)',
+          border: '1px solid rgba(0, 0, 0, 0.08)',
+          boxShadow: '0 4px 20px rgba(0, 0, 0, 0.10)',
         }
       }
     },
@@ -65,11 +67,9 @@ function BottomDock() {
       gap: 1,
       p: 1,
       borderRadius: 8,
-      bgcolor: 'rgba(40, 40, 40, 0.6)',
-      backdropFilter: 'blur(20px)',
-      WebkitBackdropFilter: 'blur(20px)',
-      border: '1px solid rgba(255, 255, 255, 0.15)',
-      boxShadow: '0 10px 40px rgba(0,0,0,0.5)',
+      bgcolor: '#c3d4e8',
+      border: '1px solid rgba(0, 0, 0, 0.1)',
+      boxShadow: '0 10px 30px rgba(0,0,0,0.15)',
     }}>
       {navItems.map((item) => {
         const isActive = currentPath === item.path || (currentPath === '/' && item.path === '/drrm');
@@ -82,9 +82,9 @@ function BottomDock() {
             sx={{
               px: 3,
               py: 1.5,
-              color: isActive ? '#fff' : '#86868b',
-              bgcolor: isActive ? 'rgba(255,255,255,0.1)' : 'transparent',
-              '&:hover': { bgcolor: 'rgba(255,255,255,0.15)', color: '#fff' }
+              color: isActive ? '#132033' : '#5a6b82',
+              bgcolor: isActive ? 'rgba(10,99,209,0.18)' : 'transparent',
+              '&:hover': { bgcolor: 'rgba(10,99,209,0.12)', color: '#132033' }
             }}
           >
             {item.label}
@@ -98,18 +98,16 @@ function BottomDock() {
 // 3. Main App Assembly
 export default function App() {
   return (
-    <ThemeProvider theme={appleDarkTheme}>
-      <CssBaseline /> {/* Injects the black background globally */}
+    <ThemeProvider theme={appleLightTheme}>
+      <CssBaseline />
       <Router>
-        
-        {/* Floating Top Header */}
+
         <Box sx={{ pt: 4, pb: 2, px: 4, display: 'flex', justifyContent: 'center' }}>
-          <Typography variant="h6" fontWeight="bold" letterSpacing="-0.5px" color="#f5f5f7">
-             Cloud Telecom Decision Intelligence
+          <Typography variant="h6" fontWeight="bold" letterSpacing="-0.5px" color="#132033">
+            Cloud Telecom Decision Intelligence
           </Typography>
         </Box>
 
-        {/* Page Content (Added bottom padding so the dock doesn't cover content) */}
         <Container sx={{ mt: 2, pb: 15, maxWidth: '1400px !important' }}>
           <Routes>
             <Route path="/" element={<DrrmDashboard />} />
