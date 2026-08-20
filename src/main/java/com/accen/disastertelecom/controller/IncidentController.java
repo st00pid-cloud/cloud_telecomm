@@ -1,4 +1,4 @@
-﻿package com.accen.disastertelecom.controller;
+package com.accen.disastertelecom.controller;
 
 import com.accen.disastertelecom.dto.IncidentPayload;
 import com.accen.disastertelecom.entity.ScoreResult;
