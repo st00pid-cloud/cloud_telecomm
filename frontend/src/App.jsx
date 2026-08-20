@@ -501,13 +501,11 @@ function GroupPagePlaceholder() {
             }}
         >
             <Typography variant="h5" fontWeight={700} gutterBottom>
-                The Group
+                Cloud Elite Project
             </Typography>
 
             <Typography color="text.secondary" sx={{ lineHeight: 1.8 }}>
-                This page is reserved for the Cloud Elite Telecommunications Group profile.
-                Add your team members, roles, project responsibilities, adviser information,
-                and contribution summary here.
+                This serves as a final submission for our Cloud Elite Training under Accenture! Adios~~
             </Typography>
         </Paper>
     );

@@ -5,18 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8f5b04a4-dc0f-4ada-8337-84262b58296d" name="Changes" comment="Start of hour 6">
-      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/target/classes/com/accen/disastertelecom/config/GeminiConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/target/classes/com/accen/disastertelecom/controller/AdvisorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/target/classes/com/accen/disastertelecom/dto/AdvisorRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/target/classes/com/accen/disastertelecom/dto/AdvisorResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/target/classes/com/accen/disastertelecom/service/AdvisorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/backend/disastertelecom/target/classes/com/accen/disastertelecom/service/impl/AdvisorServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/disastertelecom" beforeDir="false" afterPath="$PROJECT_DIR$/backend/disastertelecom" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/disastertelecom/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/components/AdvisorPanel.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/DrrmDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/DrrmDashboard.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/pages/EngineerDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/EngineerDashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/AboutPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/AboutPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/pages/ExecutiveDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ExecutiveDashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/services/advisorService.js" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/services/advisorService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,61 +37,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000056238907549" />
-      <entry key="MS500" value="1.0905334503335367" />
-      <entry key="S2" value="1.847528691720953" />
-      <entry key="S5" value="2.716076609310841" />
-      <entry key="S10" value="3.2488458603947534" />
-      <entry key="S30" value="3.7199098142503924" />
-      <entry key="S60" value="3.855836526176833" />
-      <entry key="M2" value="3.9268554377778218" />
-      <entry key="M5" value="3.9716017991716903" />
-      <entry key="M10" value="4.595110563176572" />
-      <entry key="M15" value="9.111925389896484" />
-      <entry key="M30" value="47.871261692311286" />
-      <entry key="H1" value="138.4688689674087" />
-      <entry key="H2" value="277.77222935295026" />
-      <entry key="H4" value="529.7200788085045" />
-      <entry key="D1" value="1441.9976465238542" />
-      <entry key="W1" value="1804.6501423933057" />
+      <entry key="MS100" value="1.3654120474301827" />
+      <entry key="MS500" value="3.8582352961682975" />
+      <entry key="S2" value="6.509157011690689" />
+      <entry key="S5" value="7.7314802691505555" />
+      <entry key="S10" value="8.300608735527423" />
+      <entry key="S30" value="8.75031768746543" />
+      <entry key="S60" value="9.081358783470655" />
+      <entry key="M2" value="12.873230653471746" />
+      <entry key="M5" value="33.18572300421614" />
+      <entry key="M10" value="56.15129599544592" />
+      <entry key="M15" value="69.67652643920431" />
+      <entry key="M30" value="92.7368272633155" />
+      <entry key="H1" value="136.44326702473413" />
+      <entry key="H2" value="248.65145342146238" />
+      <entry key="H4" value="491.4132763154697" />
+      <entry key="D1" value="1519.3855256211841" />
+      <entry key="W1" value="1977.3086955594313" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
-      <entry key="S5" value="3.501209100022994E-308" />
-      <entry key="S10" value="1.8711518110572946E-154" />
-      <entry key="S30" value="5.719675023844115E-52" />
-      <entry key="S60" value="2.397882280717852E-26" />
-      <entry key="M2" value="1.673169505863126E-13" />
-      <entry key="M5" value="1.2744715248990555E-5" />
-      <entry key="M10" value="0.006690290352987251" />
-      <entry key="M15" value="0.05559698365028433" />
-      <entry key="M30" value="0.47077250122043585" />
-      <entry key="H1" value="1.469630046774276" />
-      <entry key="H2" value="3.1431506396583897" />
-      <entry key="H4" value="5.494081560905195" />
-      <entry key="D1" value="10.340615027112046" />
-      <entry key="W1" value="11.741869188660482" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="8.185566606581708E-277" />
+      <entry key="S30" value="9.354406725435912E-93" />
+      <entry key="S60" value="9.671818197958397E-47" />
+      <entry key="M2" value="9.834540252578375E-24" />
+      <entry key="M5" value="6.267618246615793E-10" />
+      <entry key="M10" value="2.5103149281102992E-5" />
+      <entry key="M15" value="8.818679395469484E-4" />
+      <entry key="M30" value="0.03944970712340375" />
+      <entry key="H1" value="0.38731627033480653" />
+      <entry key="H2" value="1.6193466654430042" />
+      <entry key="H4" value="4.045970545536429" />
+      <entry key="D1" value="10.476166508230913" />
+      <entry key="W1" value="12.598246879480067" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.8350902193242832" />
-      <entry key="MS500" value="1.0404423718951066" />
-      <entry key="S2" value="1.8078000319212368" />
-      <entry key="S5" value="2.689409463042697" />
-      <entry key="S10" value="3.232290489049427" />
-      <entry key="S30" value="3.713446745680745" />
-      <entry key="S60" value="3.852468889364411" />
-      <entry key="M2" value="3.925136072121711" />
-      <entry key="M5" value="3.970917967783787" />
-      <entry key="M10" value="4.60142468646475" />
-      <entry key="M15" value="9.167137591699683" />
-      <entry key="M30" value="48.34118578618244" />
-      <entry key="H1" value="139.9369476873021" />
-      <entry key="H2" value="280.91327642615516" />
-      <entry key="H4" value="535.2119393442641" />
-      <entry key="D1" value="1452.3373620614655" />
-      <entry key="W1" value="1816.391857020617" />
+      <entry key="MS100" value="1.3257923483552068" />
+      <entry key="MS500" value="3.831264357497457" />
+      <entry key="S2" value="6.477034982673349" />
+      <entry key="S5" value="7.698978237211466" />
+      <entry key="S10" value="8.277599066105003" />
+      <entry key="S30" value="8.740576242284781" />
+      <entry key="S60" value="9.076155438286454" />
+      <entry key="M2" value="12.870275124491185" />
+      <entry key="M5" value="33.18367315047646" />
+      <entry key="M10" value="56.14949918071433" />
+      <entry key="M15" value="69.67577647373608" />
+      <entry key="M30" value="92.77504885973848" />
+      <entry key="H1" value="136.82953546934186" />
+      <entry key="H2" value="250.26947763378308" />
+      <entry key="H4" value="495.45757231117557" />
+      <entry key="D1" value="1529.860804061597" />
+      <entry key="W1" value="1989.9067811756743" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -140,11 +137,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\justine.mae.macario\cloud-disaster-telecom-decision-intelligence\backend\disastertelecom\target\classes\com\accen\disastertelecom\service" />
-      <recent name="C:\Users\justine.mae.macario\cloud-disaster-telecom-decision-intelligence\data\schemas" />
-      <recent name="C:\Users\justine.mae.macario\cloud-disaster-telecom-decision-intelligence\backend\disastertelecom" />
-      <recent name="C:\Users\justine.mae.macario\cloud-disaster-telecom-decision-intelligence\backend\disastertelecom\src" />
-      <recent name="C:\Users\justine.mae.macario\cloud-disaster-telecom-decision-intelligence\backend" />
+      <recent name="C:\Users\justine.mae.macario\cloud-disaster-telecom-decision-intelligence\frontend\src" />
+      <recent name="C:\Users\justine.mae.macario\cloud-disaster-telecom-decision-intelligence\frontend" />
+      <recent name="C:\Users\justine.mae.macario\cloud-disaster-telecom-decision-intelligence\src\main\java\com\accen\disastertelecom\exception" />
+      <recent name="C:\Users\justine.mae.macario\cloud-disaster-telecom-decision-intelligence\src\main\java\com\accen\disastertelecom" />
+      <recent name="C:\Users\justine.mae.macario\cloud-disaster-telecom-decision-intelligence\src\main\java\com\accen\disastertelecom\service\impl" />
     </key>
   </component>
   <component name="SharedIndexes">

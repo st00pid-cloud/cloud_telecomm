@@ -32,18 +32,18 @@ export default function AboutPage() {
             linkedin: 'https://www.linkedin.com/in/celes-castro',
         },
         {
-            name: 'Member',
-            role: 'Role',
+            name: 'Breanna Antero',
+            role: 'Member',
             linkedin: 'https://www.linkedin.com',
         },
         {
-            name: 'Member',
-            role: 'Role',
+            name: 'Charisse Ayaoan',
+            role: 'Member',
             linkedin: 'https://www.linkedin.com',
         },
         {
-            name: 'Member',
-            role: 'Role',
+            name: 'Daniel Javillonar',
+            role: 'Member',
             linkedin: 'https://www.linkedin.com',
         },
     ];
@@ -134,7 +134,8 @@ export default function AboutPage() {
                 </Typography>
             </Paper>
 
-            {/* Main content — expanded column width for Development Team */}
+            {/* Main content — expanded column width for
+            Development Team */}
             <Box
                 sx={{
                     flex: 1,
@@ -263,7 +264,7 @@ export default function AboutPage() {
                                 fontWeight: 700,
                             }}
                         >
-                            Development Team
+                            Accenture
                         </Typography>
                     </Box>
                     <Divider sx={{ mb: 1 }} />
