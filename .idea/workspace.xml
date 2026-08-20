@@ -13,6 +13,10 @@
       <change afterPath="$PROJECT_DIR$/backend/disastertelecom/target/classes/com/accen/disastertelecom/service/impl/AdvisorServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/disastertelecom/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/App.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/App.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/DrrmDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/DrrmDashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/EngineerDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/EngineerDashboard.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/pages/ExecutiveDashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/pages/ExecutiveDashboard.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,7 +29,7 @@
         <entry key="$PROJECT_DIR$/backend/disastertelecom" value="main" />
       </map>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/backend/disastertelecom" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -36,61 +40,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0520339299736955E-5" />
-      <entry key="MS500" value="0.17170738581194023" />
-      <entry key="S2" value="3.42602577890322" />
-      <entry key="S5" value="14.107255080392179" />
-      <entry key="S10" value="31.83993723432641" />
-      <entry key="S30" value="76.6386059945103" />
-      <entry key="S60" value="120.13717899452841" />
-      <entry key="M2" value="171.90545633133928" />
-      <entry key="M5" value="227.42431323791124" />
-      <entry key="M10" value="252.88900768901686" />
-      <entry key="M15" value="262.6447844445857" />
-      <entry key="M30" value="275.7375527727543" />
-      <entry key="H1" value="298.7058086528285" />
-      <entry key="H2" value="376.06037500192105" />
-      <entry key="H4" value="596.7581567134903" />
-      <entry key="D1" value="1413.2996033690304" />
-      <entry key="W1" value="1721.293604971448" />
+      <entry key="MS100" value="1.0000056238907549" />
+      <entry key="MS500" value="1.0905334503335367" />
+      <entry key="S2" value="1.847528691720953" />
+      <entry key="S5" value="2.716076609310841" />
+      <entry key="S10" value="3.2488458603947534" />
+      <entry key="S30" value="3.7199098142503924" />
+      <entry key="S60" value="3.855836526176833" />
+      <entry key="M2" value="3.9268554377778218" />
+      <entry key="M5" value="3.9716017991716903" />
+      <entry key="M10" value="4.595110563176572" />
+      <entry key="M15" value="9.111925389896484" />
+      <entry key="M30" value="47.871261692311286" />
+      <entry key="H1" value="138.4688689674087" />
+      <entry key="H2" value="277.77222935295026" />
+      <entry key="H4" value="529.7200788085045" />
+      <entry key="D1" value="1441.9976465238542" />
+      <entry key="W1" value="1804.6501423933057" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.000000017267641" />
-      <entry key="S10" value="1.0001511580434346" />
-      <entry key="S30" value="1.0784280935531103" />
-      <entry key="S60" value="1.3917542239451368" />
-      <entry key="M2" value="1.8827028304389293" />
-      <entry key="M5" value="2.440962171274334" />
-      <entry key="M10" value="2.6974339658004265" />
-      <entry key="M15" value="2.7929012095299433" />
-      <entry key="M30" value="2.913421547091528" />
-      <entry key="H1" value="3.2510839446012407" />
-      <entry key="H2" value="4.36095605839072" />
-      <entry key="H4" value="6.184529730307631" />
-      <entry key="D1" value="9.815698309929118" />
-      <entry key="W1" value="10.817518279970521" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="3.501209100022994E-308" />
+      <entry key="S10" value="1.8711518110572946E-154" />
+      <entry key="S30" value="5.719675023844115E-52" />
+      <entry key="S60" value="2.397882280717852E-26" />
+      <entry key="M2" value="1.673169505863126E-13" />
+      <entry key="M5" value="1.2744715248990555E-5" />
+      <entry key="M10" value="0.006690290352987251" />
+      <entry key="M15" value="0.05559698365028433" />
+      <entry key="M30" value="0.47077250122043585" />
+      <entry key="H1" value="1.469630046774276" />
+      <entry key="H2" value="3.1431506396583897" />
+      <entry key="H4" value="5.494081560905195" />
+      <entry key="D1" value="10.340615027112046" />
+      <entry key="W1" value="11.741869188660482" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.006801378450827895" />
-      <entry key="MS500" value="0.48349651036993035" />
-      <entry key="S2" value="4.0877797604779" />
-      <entry key="S5" value="14.929602797022735" />
-      <entry key="S10" value="32.736642852850856" />
-      <entry key="S30" value="77.66672535786464" />
-      <entry key="S60" value="121.48706582368933" />
-      <entry key="M2" value="173.75461558991148" />
-      <entry key="M5" value="229.84599985759513" />
-      <entry key="M10" value="255.57534368429094" />
-      <entry key="M15" value="265.4297530590023" />
-      <entry key="M30" value="278.64608818569326" />
-      <entry key="H1" value="301.95316629491197" />
-      <entry key="H2" value="380.4180924319687" />
-      <entry key="H4" value="602.9399537629575" />
-      <entry key="D1" value="1423.1143896775782" />
-      <entry key="W1" value="1732.1109718290936" />
+      <entry key="MS100" value="0.8350902193242832" />
+      <entry key="MS500" value="1.0404423718951066" />
+      <entry key="S2" value="1.8078000319212368" />
+      <entry key="S5" value="2.689409463042697" />
+      <entry key="S10" value="3.232290489049427" />
+      <entry key="S30" value="3.713446745680745" />
+      <entry key="S60" value="3.852468889364411" />
+      <entry key="M2" value="3.925136072121711" />
+      <entry key="M5" value="3.970917967783787" />
+      <entry key="M10" value="4.60142468646475" />
+      <entry key="M15" value="9.167137591699683" />
+      <entry key="M30" value="48.34118578618244" />
+      <entry key="H1" value="139.9369476873021" />
+      <entry key="H2" value="280.91327642615516" />
+      <entry key="H4" value="535.2119393442641" />
+      <entry key="D1" value="1452.3373620614655" />
+      <entry key="W1" value="1816.391857020617" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -115,7 +119,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "e07501a2",
+    "git-widget-placeholder": "my-feature-work",
     "javascript.preferred.runtime.type.id": "node",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
@@ -169,7 +173,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>

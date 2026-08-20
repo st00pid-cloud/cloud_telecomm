@@ -3,6 +3,10 @@ import {
   Typography, Box, Paper, Grid, Table, TableBody, TableCell, TableHead,
   TableRow, Chip, CircularProgress, Alert, Stack, Divider, LinearProgress
 } from '@mui/material';
+import CellTowerRoundedIcon from '@mui/icons-material/CellTowerRounded';
+import SignalWifiOffRoundedIcon from '@mui/icons-material/SignalWifiOffRounded';
+import WarningAmberRoundedIcon from '@mui/icons-material/WarningAmberRounded';
+import TrendingUpRoundedIcon from '@mui/icons-material/TrendingUpRounded';
 import { getEngineerDashboard } from '../api/telecomApi';
 
 /* ------------------------------------------------------------------ */
@@ -10,7 +14,7 @@ import { getEngineerDashboard } from '../api/telecomApi';
 /* ------------------------------------------------------------------ */
 const cardSx = {
   p: 3,
-  borderRadius: 3,
+  borderRadius: 1,
   border: '1px solid',
   borderColor: 'divider',
   boxShadow: 'none',
@@ -38,11 +42,78 @@ function getSeverityMeta(severity) {
 }
 
 /* ------------------------------------------------------------------ */
-/*  Small reusable KPI stat card                                       */
+/*  Region code → full name / description mapping                      */
+/*  Extend this map as new site-ID prefixes are introduced.            */
 /* ------------------------------------------------------------------ */
-function StatCard({ label, value, accentColor }) {
+const REGION_META = {
+  ILO: {
+    name: 'Iloilo',
+    description: 'Province in Western Visayas; highest incident concentration in this report.',
+  },
+  ANT: {
+    name: 'Antique',
+    description: 'Province in Western Visayas along the western coast of Panay Island.',
+  },
+  CAP: {
+    name: 'Capiz',
+    description: 'Province in Western Visayas, northern coast of Panay Island.',
+  },
+  AKL: {
+    name: 'Aklan',
+    description: 'Province in Western Visayas, home to Boracay Island.',
+  },
+  NEG: {
+    name: 'Negros',
+    description: 'Island province group (Occidental/Oriental) in the Visayas.',
+  },
+  UNK: {
+    name: 'Unknown',
+    description: 'Site ID did not include a recognizable region prefix.',
+  },
+};
+
+function getRegionMeta(code) {
   return (
-      <Paper sx={{ ...cardSx, p: 2.5 }}>
+      REGION_META[code] || {
+        name: code,
+        description: 'Region code derived from the Site ID prefix.',
+      }
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/*  Small reusable KPI stat card — pill style (icon chip + value)       */
+/* ------------------------------------------------------------------ */
+function StatCard({ label, value, accentColor, bgColor, borderColor, icon }) {
+  return (
+      <Box
+          sx={{
+            p: 2.5,
+            borderRadius: 2.5,
+            backgroundColor: bgColor,
+            border: `1px solid ${borderColor}`,
+            height: '100%',
+            width: '100%',
+            boxSizing: 'border-box',
+            textAlign: 'center',
+          }}
+      >
+        <Box
+            sx={{
+              width: 44,
+              height: 44,
+              borderRadius: '50%',
+              backgroundColor: '#ffffff',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              mx: 'auto',
+              mb: 1.5,
+              boxShadow: '0 1px 2px rgba(0,0,0,0.06)',
+            }}
+        >
+          {icon}
+        </Box>
         <Typography
             variant="body2"
             sx={{ color: 'text.secondary', fontWeight: 600, mb: 0.5 }}
@@ -55,7 +126,7 @@ function StatCard({ label, value, accentColor }) {
         >
           {value}
         </Typography>
-      </Paper>
+      </Box>
   );
 }
 
@@ -156,37 +227,145 @@ export default function EngineerDashboard() {
           </Typography>
         </Box>
 
-        {/* ---------------- KPI row ---------------- */}
-        <Grid container spacing={2.5} sx={{ mb: 3 }}>
-          <Grid item xs={12} sm={6} md={3}>
-            <StatCard
-                label="Active Sites"
-                value={metrics.activeSites}
-                accentColor="#16a34a"
-            />
+        {/* ---------------- Affected Regions Summary (moved to top) ---------------- */}
+        <Paper sx={{ ...cardSx, mb: 3 }}>
+          <Typography variant="h6" sx={sectionTitleSx}>
+            Affected Regions Summary
+          </Typography>
+          <Grid container spacing={3}>
+            {/* ----- Left: region stat boxes ----- */}
+            <Grid item xs={12} md={7}>
+              <Grid container spacing={2}>
+                {metrics.topRegions.map(([region, count]) => (
+                    <Grid item xs={6} sm={4} key={region}>
+                      <Box
+                          sx={{
+                            p: 2,
+                            borderRadius: 1,
+                            border: '1px solid',
+                            borderColor: 'divider',
+                            textAlign: 'center',
+                          }}
+                      >
+                        <Typography
+                            variant="body2"
+                            sx={{ color: 'text.secondary', fontWeight: 600 }}
+                        >
+                          {region}
+                        </Typography>
+                        <Typography variant="h6" sx={{ fontWeight: 700 }}>
+                          {count}
+                        </Typography>
+                        <Typography
+                            variant="caption"
+                            sx={{ color: 'text.secondary' }}
+                        >
+                          incident{count === 1 ? '' : 's'}
+                        </Typography>
+                      </Box>
+                    </Grid>
+                ))}
+              </Grid>
+            </Grid>
+
+            {/* ----- Right: what the region codes mean ----- */}
+            <Grid item xs={12} md={5}>
+              <Box
+                  sx={{
+                    pl: { xs: 0, md: 3 },
+                    borderLeft: { xs: 'none', md: '1px solid' },
+                    borderColor: { md: 'divider' },
+                    height: '100%',
+                  }}
+              >
+                <Typography
+                    variant="caption"
+                    sx={{
+                      fontWeight: 700,
+                      letterSpacing: '0.06em',
+                      color: 'text.secondary',
+                      textTransform: 'uppercase',
+                      display: 'block',
+                      mb: 1,
+                    }}
+                >
+                  What these codes mean
+                </Typography>
+                <Stack spacing={1.25}>
+                  {metrics.topRegions.map(([region]) => {
+                    const meta = getRegionMeta(region);
+                    return (
+                        <Box key={region}>
+                          <Typography variant="body2" sx={{ fontWeight: 700 }}>
+                            {region} — {meta.name}
+                          </Typography>
+                          <Typography
+                              variant="caption"
+                              sx={{ color: 'text.secondary' }}
+                          >
+                            {meta.description}
+                          </Typography>
+                        </Box>
+                    );
+                  })}
+                </Stack>
+              </Box>
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <StatCard
-                label="Down Sites"
-                value={metrics.downSites}
-                accentColor="#dc2626"
-            />
-          </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <StatCard
-                label="Critical Incidents"
-                value={metrics.criticalCount}
-                accentColor="#ea580c"
-            />
-          </Grid>
-          <Grid item xs={12} sm={6} md={3}>
-            <StatCard
-                label="Recovery Rate"
-                value={`${metrics.recoveryRate}%`}
-                accentColor="#2563eb"
-            />
-          </Grid>
-        </Grid>
+        </Paper>
+
+        {/* ---------------- KPI row (single white card, 4 pills inside) ---------------- */}
+        <Paper sx={{ ...cardSx, mb: 3 }}>
+          <Box
+              sx={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: 2.5,
+                width: '100%',
+              }}
+          >
+            <Box sx={{ flex: '1 1 220px' }}>
+              <StatCard
+                  label="Active Sites"
+                  value={metrics.activeSites}
+                  accentColor="#16a34a"
+                  bgColor="#f0fdf4"
+                  borderColor="#bbf7d0"
+                  icon={<CellTowerRoundedIcon sx={{ color: '#16a34a', fontSize: 24 }} />}
+              />
+            </Box>
+            <Box sx={{ flex: '1 1 220px' }}>
+              <StatCard
+                  label="Down Sites"
+                  value={metrics.downSites}
+                  accentColor="#dc2626"
+                  bgColor="#fef2f2"
+                  borderColor="#fecaca"
+                  icon={<SignalWifiOffRoundedIcon sx={{ color: '#dc2626', fontSize: 24 }} />}
+              />
+            </Box>
+            <Box sx={{ flex: '1 1 220px' }}>
+              <StatCard
+                  label="Critical Incidents"
+                  value={metrics.criticalCount}
+                  accentColor="#ea580c"
+                  bgColor="#fff7ed"
+                  borderColor="#fed7aa"
+                  icon={<WarningAmberRoundedIcon sx={{ color: '#ea580c', fontSize: 24 }} />}
+              />
+            </Box>
+            <Box sx={{ flex: '1 1 220px' }}>
+              <StatCard
+                  label="Recovery Rate"
+                  value={`${metrics.recoveryRate}%`}
+                  accentColor="#2563eb"
+                  bgColor="#eff6ff"
+                  borderColor="#bfdbfe"
+                  icon={<TrendingUpRoundedIcon sx={{ color: '#2563eb', fontSize: 24 }} />}
+              />
+            </Box>
+          </Box>
+        </Paper>
 
         {/* ---------------- Main content grid ---------------- */}
         <Grid container spacing={2.5}>
@@ -298,7 +477,7 @@ export default function EngineerDashboard() {
                   <LinearProgress
                       variant="determinate"
                       value={metrics.recoveryRate}
-                      sx={{ height: 8, borderRadius: 4 }}
+                      sx={{ height: 8, borderRadius: 2 }}
                   />
                 </Box>
 
@@ -332,46 +511,6 @@ export default function EngineerDashboard() {
                 </Stack>
               </Paper>
             </Stack>
-          </Grid>
-
-          {/* ----- Bottom row: Affected regions ----- */}
-          <Grid item xs={12}>
-            <Paper sx={cardSx}>
-              <Typography variant="h6" sx={sectionTitleSx}>
-                Affected Regions Summary
-              </Typography>
-              <Grid container spacing={2}>
-                {metrics.topRegions.map(([region, count]) => (
-                    <Grid item xs={6} sm={4} md={2.4} key={region}>
-                      <Box
-                          sx={{
-                            p: 2,
-                            borderRadius: 2,
-                            border: '1px solid',
-                            borderColor: 'divider',
-                            textAlign: 'center',
-                          }}
-                      >
-                        <Typography
-                            variant="body2"
-                            sx={{ color: 'text.secondary', fontWeight: 600 }}
-                        >
-                          {region}
-                        </Typography>
-                        <Typography variant="h6" sx={{ fontWeight: 700 }}>
-                          {count}
-                        </Typography>
-                        <Typography
-                            variant="caption"
-                            sx={{ color: 'text.secondary' }}
-                        >
-                          incident{count === 1 ? '' : 's'}
-                        </Typography>
-                      </Box>
-                    </Grid>
-                ))}
-              </Grid>
-            </Paper>
           </Grid>
         </Grid>
       </Box>

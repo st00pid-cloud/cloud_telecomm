@@ -46,11 +46,6 @@ export default function AboutPage() {
             role: 'Role',
             linkedin: 'https://www.linkedin.com',
         },
-        {
-            name: 'Member',
-            role: 'Role',
-            linkedin: 'https://www.linkedin.com',
-        },
     ];
 
     const features = [

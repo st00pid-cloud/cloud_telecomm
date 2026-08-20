@@ -460,22 +460,6 @@ export default function ExecutiveDashboard() {
                     sx={{ mb: 3 }}
                 >
                     <Box sx={{ maxWidth: 760 }}>
-                        <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
-                            <Typography
-                                variant="overline"
-                                color="primary"
-                                fontWeight={800}
-                                sx={{ letterSpacing: 1 }}
-                            >
-                                LGU Decision View
-                            </Typography>
-                            <Chip
-                                label={situation.shortLabel}
-                                color={situation.tone}
-                                size="small"
-                                sx={{ fontWeight: 700 }}
-                            />
-                        </Stack>
 
                         <Typography
                             variant="h4"
@@ -500,39 +484,6 @@ export default function ExecutiveDashboard() {
                         </Typography>
                     </Box>
 
-                    <Paper
-                        variant="outlined"
-                        sx={{
-                            px: 2,
-                            py: 0.5,
-                            borderRadius: 999,
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: 1,
-                            bgcolor: 'background.paper',
-                            flexShrink: 0,
-                        }}
-                    >
-                        {lastUpdated && (
-                            <Typography
-                                variant="caption"
-                                color="text.secondary"
-                                sx={{ whiteSpace: 'nowrap' }}
-                            >
-                                Updated {lastUpdated.toLocaleTimeString()}
-                            </Typography>
-                        )}
-
-                        <Tooltip title="Refresh dashboard">
-                            <IconButton
-                                size="small"
-                                onClick={loadDashboard}
-                                aria-label="Refresh LGU dashboard data"
-                            >
-                                <RefreshIcon fontSize="small" />
-                            </IconButton>
-                        </Tooltip>
-                    </Paper>
                 </Stack>
 
                 <SectionCard sx={{ p: { xs: 2.5, md: 3 }, mb: 3 }}>
@@ -619,12 +570,6 @@ export default function ExecutiveDashboard() {
                                     </Typography>
                                 </Box>
 
-                                <Chip
-                                    label="For coordination"
-                                    color={situation.tone}
-                                    size="small"
-                                    sx={{ fontWeight: 700 }}
-                                />
                             </Stack>
 
                             <Stack spacing={1.25}>

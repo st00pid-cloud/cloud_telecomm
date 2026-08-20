@@ -144,7 +144,7 @@ const navSections = [
             },
             {
                 path: '/engineer',
-                label: 'Network Engineering',
+                label: 'Engineering Operations',
                 shortLabel: 'Engineer',
                 icon: <BuildIcon />,
                 eyebrow: 'Infrastructure monitoring',
